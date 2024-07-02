@@ -61,9 +61,9 @@ html,body
   --bs-btn-bg: #007bff;
   --bs-btn-border-color: #007bff;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #1a73e8;
-  --bs-btn-hover-border-color: #1a73e8;
-  --bs-btn-focus-shadow-rgb: 198, 26, 84;
+  --bs-btn-hover-bg: #007bff;
+  --bs-btn-hover-border-color: #007bff;
+  --bs-btn-focus-shadow-rgb: #007bff;
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: #007bff;
   --bs-btn-active-border-color: #007bff;
@@ -85,4 +85,13 @@ html,body
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .btn.bg-gradient-primary:not(:disabled):not(.disabled).active, .btn.bg-gradient-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .show>.btn.bg-gradient-primary.dropdown-toggle {
   background-color: #007bff;
+}
+
+.btn-check:focus-visible+.btn, .btn:focus-visible {
+  border-color: #007bff;
+  outline: 0;
+}
+
+a:hover {
+  color: #007bff;
 }
