@@ -84,6 +84,13 @@ const Projects = () => {
                 </tr>
               </tbody>
             </table>
+            <p></p>
+            <img src="/azure.svg" alt="azure" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '30px' }} />
+            <img src="/mongodb.svg" alt="mongodb" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' }} />
+            <img src="/fastapi.svg" alt="fastapi" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/docker.svg" alt="docker" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '30px' }} />
+            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '30px' }} />
           </div>
         </div>
       </div>
@@ -139,6 +146,10 @@ const Projects = () => {
                 </tr>
               </tbody>
             </table>
+            <p></p>
+            <img src="/sql-server.svg" alt="sql-server" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' }} />
+            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' }} />
+            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
           </div>
         </div>
       </div>
@@ -202,6 +213,13 @@ const Projects = () => {
                 </tr>
               </tbody>
             </table>
+            <p></p>
+            <img src="/html5.svg" alt="html5" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '30px' }} />
+            <img src="/css.svg" alt="css" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/vite.svg" alt="vite" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/react.svg" alt="react" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
+            <img src="/netlify.svg" alt="netlify" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' }} />
           </div>
         </div>
       </div>
