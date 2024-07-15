@@ -209,7 +209,7 @@ const Projects = () => {
             <img src="/oracle.svg" alt="oracle" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px'}} />
             <img src="/linux.svg" alt="linux" style={{ width: '90px', height: '50px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
             <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' , paddingTop: '5px'}} />
-            <img src="/flask.svg" alt="flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+            <img src="/flask.svg" alt="flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '10px' , paddingTop: '5px'}} />
             <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
           </div>
         </div>
