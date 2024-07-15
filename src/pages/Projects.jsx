@@ -157,6 +157,67 @@ const Projects = () => {
       <div class="col-lg-9">
         <div class="card">
           <div class="card-body">
+            <h4 class="card-title">DBA Oracle</h4>
+            <b><p class="card-text">
+            Technology Used:
+            </p></b>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Database: Oracle (several versions: 11, 12, 19, 21, 23) Communty & Enterprise Editions</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Programming Language: SQL, PL/SQL, Linux commands, Python</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Tickets platform: Automated on JIRA</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Testing: SQL scripts</td>
+                </tr>
+              </tbody>
+            </table>
+            <p></p>
+            <b><p class="card-text">
+            Projects Highlights:
+            </p></b>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Deployment of an Oracle database from scratch on a new server</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Handle incidents & technical tickets on the JIRA platform for customers using our Oracle databases</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Development of a python script to maintain the storage space of different tablespaces in different databases in order to monitor the use of disk space.</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1"></td>
+                  <td>• Development of numerous stored procedures in PL/SQL</td>
+                </tr>
+              </tbody>
+            </table>
+            <p></p>
+            <img src="/oracle.svg" alt="oracle" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px'}} />
+            <img src="/linux.svg" alt="linux" style={{ width: '90px', height: '50px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' , paddingTop: '5px'}} />
+            <img src="/flask.svg" alt="flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="col-lg-9">
+        <div class="card">
+          <div class="card-body">
             <h4 class="card-title">CV Website using React</h4>
             <b><p class="card-text">
             Technology Stack:
