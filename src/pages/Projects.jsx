@@ -1,286 +1,202 @@
-import React from 'react';
 import Navbar from '../components/Navbar';
 import '../styles.css';
+
+const techLogo = { width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' };
+const techLogoWide = { width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' };
 
 const Projects = () => {
   return (
     <div style={{ fontFamily: 'Poppins, Arial, sans-serif' }}>
       <Navbar />
-      <p></p>
-      <center><h1>My projects</h1></center>
-      <p></p>
-      <div class="col-lg-9">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Refactor infrastructure to reduce costs</h4>
-            <b><p class="card-text">
-            Technology Used:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Programming  Language: Python, SQL</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Cloud Services: Azure Serverless Containers</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• CI/CD Tool: Azure Devops</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Containerization: Docker</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <b><p class="card-text">
-            Key Features:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Reduce infrastructure costs by 10</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Enhance existing project functionality with new data sources and features</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Automate deployment processes</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <b><p class="card-text">
-            Project Highlights:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Added a new data source to improve project capabilities</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Developed and integrated new features using Python</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Containerized applications with Docker for consistent deployment and scalability</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Configured Azure DevOps CI/CD pipelines for automated deployment of Dockerized applications</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Migrated from Kubernetes to serverless containers on Azure to reduce operational costs</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <img src="/azure.svg" alt="azure" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
-            <img src="/mongodb.svg" alt="mongodb" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
-            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
-            <img src="/fastapi.svg" alt="fastapi" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
-            <img src="/docker.svg" alt="docker" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
-            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
+      <div className="mt-4 mb-2 text-center">
+        <h1>My projects</h1>
+      </div>
+
+      {/* Healthcare Data Platform — Infrastructure */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Healthcare Data Platform — Cloud Infrastructure (IaC)</h4>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>IaC: Terraform (modular, multi-target deployment)</li>
+              <li>Cloud: Azure — Databricks, Data Factory, ADLS Gen2, Key Vault, NAT Gateway</li>
+              <li>Networking: Hub &amp; Spoke VNet architecture, Private Endpoints, DNS Zones</li>
+              <li>CI/CD: Azure DevOps pipelines on self-hosted VMSS agents (WIF/OIDC auth)</li>
+              <li>Quality: pre-commit, terraform-docs, TFLint</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>Fully private infrastructure — all resources behind Private Endpoints with default deny</li>
+              <li>4 independent Terraform targets: bootstrapping, landing zone, ADF, Databricks</li>
+              <li>Hub &amp; Spoke network topology with VNet peering and central Log Analytics</li>
+              <li>Automated CI/CD with Azure DevOps pipelines running inside the Hub VNet</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/terraform.svg" alt="Terraform" style={techLogo} />
+              <img src="/azure.svg" alt="Azure" style={techLogo} />
+              <img src="/databricks.svg" alt="Databricks" style={techLogo} />
+              <img src="/azuredevops.svg" alt="Azure DevOps" style={techLogo} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
           </div>
         </div>
       </div>
-      <p></p>
-      <div class="col-lg-9">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Data Migration of Finance Data on SQL Server</h4>
-            <b><p class="card-text">
-            Technology Used:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Database: SQL Server</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Programming Language: SQL, T-SQL, Python</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Documentation: Business requirements documentation tools</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Testing: SQL scripts</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <b><p class="card-text">
-            Key Features:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Understand and document business requirements for data migration</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Design data models for the staging area</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Develop stored procedures for ingestion, transformation, and loading (ETL)</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Implement unit tests and integration tests to ensure data accuracy and reliability</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <img src="/sql-server.svg" alt="sql-server" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px'}} />
-            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+
+      {/* Healthcare Data Platform — Solution */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Healthcare Data Platform — Solution Layer</h4>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>ETL: Databricks Asset Bundles — DLT pipelines (bronze, silver layers)</li>
+              <li>Orchestration: Azure Data Factory pipelines, datasets, linked services</li>
+              <li>Programming Language: Python, SQL</li>
+              <li>CI/CD: Azure DevOps pipelines with reusable templates</li>
+              <li>Auth: Workload Identity Federation (OIDC), self-hosted VMSS agent pool</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>End-to-end data platform: ingestion, transformation, and orchestration</li>
+              <li>Databricks DLT ETL with medallion architecture (bronze → silver)</li>
+              <li>ADF pipelines with managed VNet and private endpoints to storage &amp; Key Vault</li>
+              <li>Solution layer decoupled from infrastructure (managed by separate Terraform repo)</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/databricks.svg" alt="Databricks" style={techLogo} />
+              <img src="/azure.svg" alt="Azure" style={techLogo} />
+              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
+              <img src="/azuredevops.svg" alt="Azure DevOps" style={techLogo} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
           </div>
         </div>
       </div>
-      <p></p>
-      <div class="col-lg-9">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">DBA Oracle</h4>
-            <b><p class="card-text">
-            Technology Used:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Database: Oracle (several versions: 11, 12, 19, 21, 23) Communty & Enterprise Editions</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Programming Language: SQL, PL/SQL, Linux commands, Python</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Tickets platform: Automated on JIRA</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Testing: SQL scripts</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <b><p class="card-text">
-            Projects Highlights:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Deployment of an Oracle database from scratch on a new server</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Handle incidents & technical tickets on the JIRA platform for customers using our Oracle databases</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Development of a python script to maintain the storage space of different tablespaces in different databases in order to monitor the use of disk space.</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Development of numerous stored procedures in PL/SQL</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <img src="/oracle.svg" alt="oracle" style={{ width: '80px', height: '60px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px'}} />
-            <img src="/linux.svg" alt="linux" style={{ width: '90px', height: '50px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/python.svg" alt="python" style={{ width: '60px', height: '60px', verticalAlign: 'middle', marginLeft: '10px' , paddingTop: '5px'}} />
-            <img src="/flask.svg" alt="flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '10px' , paddingTop: '5px'}} />
-            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+
+      {/* Refactor infrastructure */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Refactor Infrastructure to Reduce Costs</h4>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>Programming Language: Python, SQL</li>
+              <li>Cloud Services: Azure Serverless Containers</li>
+              <li>CI/CD Tool: Azure DevOps</li>
+              <li>Containerization: Docker</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>Reduced infrastructure costs by 10x</li>
+              <li>Enhanced existing project functionality with new data sources and features</li>
+              <li>Automated deployment processes</li>
+            </ul>
+            <p className="card-text"><strong>Project Highlights:</strong></p>
+            <ul>
+              <li>Added a new data source to improve project capabilities</li>
+              <li>Developed and integrated new features using Python</li>
+              <li>Containerized applications with Docker for consistent deployment and scalability</li>
+              <li>Configured Azure DevOps CI/CD pipelines for automated deployment of Dockerized applications</li>
+              <li>Migrated from Kubernetes to serverless containers on Azure to reduce operational costs</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/azure.svg" alt="Azure" style={techLogo} />
+              <img src="/mongodb.svg" alt="MongoDB" style={techLogoWide} />
+              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
+              <img src="/fastapi.svg" alt="FastAPI" style={techLogo} />
+              <img src="/docker.svg" alt="Docker" style={techLogo} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
           </div>
         </div>
       </div>
-      <p></p>
-      <div class="col-lg-9">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">CV Website using React</h4>
-            <b><p class="card-text">
-            Technology Stack:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Frontend: React</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Build Tool: Vite</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Markup and Styling: HTML, CSS</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• UI Framework: Material Kit 2</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Deployment: Netlify</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <b><p class="card-text">
-            Key Features:
-            </p></b>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Responsive design ensuring optimal viewing on all devices</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Modern, clean, and professional UI with Material Kit 2 components</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Fast and efficient development with Vite's rapid build and hot module replacement</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Hosted and continuously deployed on Netlify for seamless updates</td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-1"></td>
-                  <td>• Customized components and styles to reflect personal branding</td>
-                </tr>
-              </tbody>
-            </table>
-            <p></p>
-            <img src="/html5.svg" alt="html5" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/css.svg" alt="css" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/vite.svg" alt="vite" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/react.svg" alt="react" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/github.svg" alt="github" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
-            <img src="/netlify.svg" alt="netlify" style={{ width: '40px', height: '40px', verticalAlign: 'middle', marginLeft: '20px' , paddingTop: '5px'}} />
+
+      {/* SQL Server migration */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Data Migration of Finance Data on SQL Server</h4>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>Database: SQL Server</li>
+              <li>Programming Language: SQL, T-SQL, Python</li>
+              <li>Documentation: Business requirements documentation tools</li>
+              <li>Testing: SQL scripts</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>Understand and document business requirements for data migration</li>
+              <li>Design data models for the staging area</li>
+              <li>Develop stored procedures for ingestion, transformation, and loading (ETL)</li>
+              <li>Implement unit tests and integration tests to ensure data accuracy and reliability</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/sql-server.svg" alt="SQL Server" style={techLogoWide} />
+              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* DBA Oracle */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">DBA Oracle</h4>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>Database: Oracle (versions 11, 12, 19, 21, 23) Community &amp; Enterprise Editions</li>
+              <li>Programming Language: SQL, PL/SQL, Linux commands, Python</li>
+              <li>Tickets platform: Automated on JIRA</li>
+            </ul>
+            <p className="card-text"><strong>Project Highlights:</strong></p>
+            <ul>
+              <li>Deployment of an Oracle database from scratch on a new server</li>
+              <li>Handle incidents &amp; technical tickets on the JIRA platform for customers using our Oracle databases</li>
+              <li>Development of a Python script to maintain the storage space of different tablespaces across databases to monitor disk space usage</li>
+              <li>Development of numerous stored procedures in PL/SQL</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/oracle.svg" alt="Oracle" style={techLogoWide} />
+              <img src="/linux.svg" alt="Linux" style={{ width: '90px', height: '50px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
+              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
+              <img src="/flask.svg" alt="Flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px' }} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Portfolio website */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">CV Website using React</h4>
+            <p className="card-text"><strong>Technology Stack:</strong></p>
+            <ul>
+              <li>Frontend: React</li>
+              <li>Build Tool: Vite</li>
+              <li>Markup and Styling: HTML, CSS</li>
+              <li>UI Framework: Material Kit 2</li>
+              <li>Deployment: Netlify</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>Responsive design ensuring optimal viewing on all devices</li>
+              <li>Modern, clean, and professional UI with Material Kit 2 components</li>
+              <li>Fast and efficient development with Vite&apos;s rapid build and hot module replacement</li>
+              <li>Hosted and continuously deployed on Netlify for seamless updates</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/html5.svg" alt="HTML5" style={techLogo} />
+              <img src="/css.svg" alt="CSS" style={techLogo} />
+              <img src="/vite.svg" alt="Vite" style={techLogo} />
+              <img src="/react.svg" alt="React" style={techLogo} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+              <img src="/netlify.svg" alt="Netlify" style={techLogo} />
+            </div>
           </div>
         </div>
       </div>

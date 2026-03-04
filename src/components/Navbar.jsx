@@ -1,31 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../styles.css';
 
 const Navbar = () => {
   const location = useLocation();
   const navbarCollapseRef = useRef(null);
 
-  useEffect(() => {
-    const handleRouteChange = () => {
-      const navDropdown = navbarCollapseRef.current;
-      if (navDropdown.classList.contains('show')) {
-        navDropdown.classList.remove('show');
-      }
-    };
-
-    handleRouteChange();
-
-    return () => {
-    };
-  }, [location]);
-
-  const handleLinkClick = () => {
-    const navDropdown = navbarCollapseRef.current;
-    if (navDropdown.classList.contains('show')) {
-      navDropdown.classList.remove('show');
+  const closeMenu = () => {
+    const nav = navbarCollapseRef.current;
+    if (nav && nav.classList.contains('show')) {
+      nav.classList.remove('show');
     }
   };
+
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
@@ -37,13 +26,13 @@ const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" ref={navbarCollapseRef}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={handleLinkClick}>Home</Link>
+              <Link className="nav-link" to="/" onClick={closeMenu}>Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/maxence_pachot_cv.pdf" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>CV</a>
+              <a className="nav-link" href="/maxence_pachot_cv.pdf" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>CV</a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/projects" onClick={handleLinkClick}>Projects</Link>
+              <Link className="nav-link" to="/projects" onClick={closeMenu}>Projects</Link>
             </li>
           </ul>
         </div>
