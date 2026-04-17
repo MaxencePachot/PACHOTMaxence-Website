@@ -53,31 +53,18 @@ html, body {
   background-color: #fb8c00 !important;
 }
 
-.btn-primary {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #007bff;
-  --bs-btn-border-color: #007bff;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #007bff;
-  --bs-btn-hover-border-color: #007bff;
-  --bs-btn-focus-shadow-rgb: #007bff;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #007bff;
-  --bs-btn-active-border-color: #007bff;
-  --bs-btn-active-shadow: none;
-  --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #007bff;
-  --bs-btn-disabled-border-color: #007bff;
+.btn-primary, .btn.bg-gradient-primary {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover, .btn.bg-gradient-primary:hover {
-  background-color: #1a73e8;
-  border-color: #1a73e8;
-  box-shadow: 0 2px 2px #1b76d1, 0 2px 1px -2px #007bff, 0 1px 2px #007bff;
-}
-
-.btn-primary, .btn.bg-gradient-primary {
-  box-shadow: 0 2px 2px #1b76d1, 0 2px 1px -2px #007bff, 0 1px 2px #007bff;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -86,14 +73,41 @@ html, body {
 .btn.bg-gradient-primary:not(:disabled):not(.disabled):active,
 .show > .btn-primary.dropdown-toggle,
 .show > .btn.bg-gradient-primary.dropdown-toggle {
-  background-color: #007bff;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .btn-check:focus-visible + .btn, .btn:focus-visible {
-  border-color: #007bff;
+  border-color: #fb8c00;
   outline: 0;
+  box-shadow: 0 0 0 3px rgba(251, 140, 0, 0.35);
+}
+
+a {
+  color: #0d6efd;
 }
 
 a:hover {
-  color: #007bff;
+  color: #fb8c00;
+}
+
+.project-meta {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.project-meta .meta-sep {
+  margin: 0 8px;
+  color: #bbb;
+}
+
+.project-outcome {
+  color: #212529;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding: 10px 14px;
+  background-color: #fff8ef;
+  border-left: 3px solid #fb8c00;
+  border-radius: 4px;
 }

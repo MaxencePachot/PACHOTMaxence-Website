@@ -12,11 +12,61 @@ const Projects = () => {
         <h1>My projects</h1>
       </div>
 
+      {/* Retail Data & BI Modernization */}
+      <div className="col-lg-9">
+        <div className="card">
+          <div className="card-body">
+            <h4 className="card-title">Retail Data &amp; BI Modernization</h4>
+            <div className="project-meta mb-2">
+              <span>Data Engineer / DevOps</span>
+              <span className="meta-sep">·</span>
+              <span>Retail</span>
+              <span className="meta-sep">·</span>
+              <span>01.2026 – Present</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Delivered a production Azure data platform (landing zone + ETL) enabling Power BI dashboards and AI use cases for a Swiss retail group.</p>
+            <p className="card-text"><strong>Technology Used:</strong></p>
+            <ul>
+              <li>IaC: Terraform with reusable modules (networking, storage, Key Vault, Databricks, NAT gateway, diagnostics)</li>
+              <li>Cloud: Azure — Databricks, Data Factory, ADLS Gen2, Key Vault, VNet, Private Endpoints</li>
+              <li>ETL: PySpark, Delta Live Tables, Unity Catalog, Databricks Asset Bundles (DAB)</li>
+              <li>Source: SQL Server (on-premises) ingested via Azure Data Factory</li>
+              <li>CI/CD: Azure DevOps pipelines on self-hosted VMSS agents with OIDC authentication</li>
+              <li>Quality: pytest / PySpark unit tests, pre-commit hooks, data quality checks</li>
+            </ul>
+            <p className="card-text"><strong>Key Features:</strong></p>
+            <ul>
+              <li>Full Azure landing zone deployed via Terraform, following a Hub &amp; Spoke architecture with private endpoints</li>
+              <li>Medallion-architecture PySpark ETL with SCD1/SCD2 merge strategies, CDC change tracking, and a 9-step cost resolution cascade engine for a finance use case</li>
+              <li>ADF pipelines extracting data from on-premises SQL Server into ADLS Gen2 staging (full and delta ingestion modes)</li>
+              <li>Databricks workspaces with VNet injection, Unity Catalog (storage credentials, external locations, catalogs, role-based grants), Delta Live Tables, and SQL Warehouses for BI</li>
+              <li>Azure DevOps pipelines for Terraform deployments, ADF artifact validation/deployment, and Databricks Asset Bundle testing/deployment</li>
+              <li>Pair programming with Claude Code as a coding assistant for infrastructure design, code generation, testing, documentation, and debugging — accelerating development pace</li>
+            </ul>
+            <div className="mt-3">
+              <img src="/terraform.svg" alt="Terraform" style={techLogo} />
+              <img src="/azure.svg" alt="Azure" style={techLogo} />
+              <img src="/databricks.svg" alt="Databricks" style={techLogo} />
+              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
+              <img src="/sql-server.svg" alt="SQL Server" style={techLogoWide} />
+              <img src="/azuredevops.svg" alt="Azure DevOps" style={techLogo} />
+              <img src="/github.svg" alt="GitHub" style={techLogo} />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Healthcare Data Platform — Infrastructure */}
       <div className="col-lg-9">
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">Healthcare Data Platform — Cloud Infrastructure (IaC)</h4>
+            <div className="project-meta mb-2">
+              <span>Data Engineer / DevOps</span>
+              <span className="meta-sep">·</span>
+              <span>Healthcare</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Designed and deployed a fully private Azure landing zone using modular Terraform with Hub &amp; Spoke networking and Private Endpoints.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
             <ul>
               <li>IaC: Terraform (modular, multi-target deployment)</li>
@@ -48,6 +98,12 @@ const Projects = () => {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">Healthcare Data Platform — Solution Layer</h4>
+            <div className="project-meta mb-2">
+              <span>Data Engineer</span>
+              <span className="meta-sep">·</span>
+              <span>Healthcare</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Shipped an end-to-end medallion data platform (ingestion → DLT transformations) on Databricks and Azure Data Factory.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
             <ul>
               <li>ETL: Databricks Asset Bundles — DLT pipelines (bronze, silver layers)</li>
@@ -79,6 +135,12 @@ const Projects = () => {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">Refactor Infrastructure to Reduce Costs</h4>
+            <div className="project-meta mb-2">
+              <span>Data Engineer</span>
+              <span className="meta-sep">·</span>
+              <span>Healthcare</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Reduced infrastructure costs by 10× by migrating workloads from Kubernetes to Azure serverless containers.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
             <ul>
               <li>Programming Language: Python, SQL</li>
@@ -117,6 +179,12 @@ const Projects = () => {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">Data Migration of Finance Data on SQL Server</h4>
+            <div className="project-meta mb-2">
+              <span>Data Engineer</span>
+              <span className="meta-sep">·</span>
+              <span>Finance</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Migrated and modelled finance data on SQL Server with tested ETL stored procedures and validated business requirements.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
             <ul>
               <li>Database: SQL Server</li>
@@ -145,6 +213,12 @@ const Projects = () => {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">DBA Oracle</h4>
+            <div className="project-meta mb-2">
+              <span>Database Administrator</span>
+              <span className="meta-sep">·</span>
+              <span>IT Services</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Operated Oracle databases (11g → 23c) across customer environments and automated storage monitoring across the fleet with Python.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
             <ul>
               <li>Database: Oracle (versions 11, 12, 19, 21, 23) Community &amp; Enterprise Editions</li>
@@ -174,6 +248,12 @@ const Projects = () => {
         <div className="card">
           <div className="card-body">
             <h4 className="card-title">CV Website using React</h4>
+            <div className="project-meta mb-2">
+              <span>Personal Project</span>
+              <span className="meta-sep">·</span>
+              <span>Open Source</span>
+            </div>
+            <p className="project-outcome"><strong>Outcome:</strong> Built and deployed this portfolio site from scratch with React + Vite, continuously deployed on Netlify.</p>
             <p className="card-text"><strong>Technology Stack:</strong></p>
             <ul>
               <li>Frontend: React</li>
