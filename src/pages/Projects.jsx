@@ -56,80 +56,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Healthcare Data Platform — Infrastructure */}
-      <div className="col-lg-9">
-        <div className="card">
-          <div className="card-body">
-            <h4 className="card-title">Healthcare Data Platform — Cloud Infrastructure (IaC)</h4>
-            <div className="project-meta mb-2">
-              <span>Data Engineer / DevOps</span>
-              <span className="meta-sep">·</span>
-              <span>Healthcare</span>
-            </div>
-            <p className="project-outcome"><strong>Outcome:</strong> Designed and deployed a fully private Azure landing zone using modular Terraform with Hub &amp; Spoke networking and Private Endpoints.</p>
-            <p className="card-text"><strong>Technology Used:</strong></p>
-            <ul>
-              <li>IaC: Terraform (modular, multi-target deployment)</li>
-              <li>Cloud: Azure — Databricks, Data Factory, ADLS Gen2, Key Vault, NAT Gateway</li>
-              <li>Networking: Hub &amp; Spoke VNet architecture, Private Endpoints, DNS Zones</li>
-              <li>CI/CD: Azure DevOps pipelines on self-hosted VMSS agents (WIF/OIDC auth)</li>
-              <li>Quality: pre-commit, terraform-docs, TFLint</li>
-            </ul>
-            <p className="card-text"><strong>Key Features:</strong></p>
-            <ul>
-              <li>Fully private infrastructure — all resources behind Private Endpoints with default deny</li>
-              <li>4 independent Terraform targets: bootstrapping, landing zone, ADF, Databricks</li>
-              <li>Hub &amp; Spoke network topology with VNet peering and central Log Analytics</li>
-              <li>Automated CI/CD with Azure DevOps pipelines running inside the Hub VNet</li>
-            </ul>
-            <div className="mt-3">
-              <img src="/terraform.svg" alt="Terraform" style={techLogo} />
-              <img src="/azure.svg" alt="Azure" style={techLogo} />
-              <img src="/databricks.svg" alt="Databricks" style={techLogo} />
-              <img src="/azuredevops.svg" alt="Azure DevOps" style={techLogo} />
-              <img src="/github.svg" alt="GitHub" style={techLogo} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Healthcare Data Platform — Solution */}
-      <div className="col-lg-9">
-        <div className="card">
-          <div className="card-body">
-            <h4 className="card-title">Healthcare Data Platform — Solution Layer</h4>
-            <div className="project-meta mb-2">
-              <span>Data Engineer</span>
-              <span className="meta-sep">·</span>
-              <span>Healthcare</span>
-            </div>
-            <p className="project-outcome"><strong>Outcome:</strong> Shipped an end-to-end medallion data platform (ingestion → DLT transformations) on Databricks and Azure Data Factory.</p>
-            <p className="card-text"><strong>Technology Used:</strong></p>
-            <ul>
-              <li>ETL: Databricks Asset Bundles — DLT pipelines (bronze, silver layers)</li>
-              <li>Orchestration: Azure Data Factory pipelines, datasets, linked services</li>
-              <li>Programming Language: Python, SQL</li>
-              <li>CI/CD: Azure DevOps pipelines with reusable templates</li>
-              <li>Auth: Workload Identity Federation (OIDC), self-hosted VMSS agent pool</li>
-            </ul>
-            <p className="card-text"><strong>Key Features:</strong></p>
-            <ul>
-              <li>End-to-end data platform: ingestion, transformation, and orchestration</li>
-              <li>Databricks DLT ETL with medallion architecture (bronze → silver)</li>
-              <li>ADF pipelines with managed VNet and private endpoints to storage &amp; Key Vault</li>
-              <li>Solution layer decoupled from infrastructure (managed by separate Terraform repo)</li>
-            </ul>
-            <div className="mt-3">
-              <img src="/databricks.svg" alt="Databricks" style={techLogo} />
-              <img src="/azure.svg" alt="Azure" style={techLogo} />
-              <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
-              <img src="/azuredevops.svg" alt="Azure DevOps" style={techLogo} />
-              <img src="/github.svg" alt="GitHub" style={techLogo} />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Refactor infrastructure */}
       <div className="col-lg-9">
         <div className="card">
@@ -139,6 +65,8 @@ const Projects = () => {
               <span>Data Engineer</span>
               <span className="meta-sep">·</span>
               <span>Healthcare</span>
+              <span className="meta-sep">·</span>
+              <span>10.2023 – 01.2024</span>
             </div>
             <p className="project-outcome"><strong>Outcome:</strong> Reduced infrastructure costs by 10× by migrating workloads from Kubernetes to Azure serverless containers.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
@@ -183,6 +111,8 @@ const Projects = () => {
               <span>Data Engineer</span>
               <span className="meta-sep">·</span>
               <span>Finance</span>
+              <span className="meta-sep">·</span>
+              <span>12.2023 – Present</span>
             </div>
             <p className="project-outcome"><strong>Outcome:</strong> Migrated and modelled finance data on SQL Server with tested ETL stored procedures and validated business requirements.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
@@ -217,6 +147,8 @@ const Projects = () => {
               <span>Database Administrator</span>
               <span className="meta-sep">·</span>
               <span>IT Services</span>
+              <span className="meta-sep">·</span>
+              <span>03.2023 – Present</span>
             </div>
             <p className="project-outcome"><strong>Outcome:</strong> Operated Oracle databases (11g → 23c) across customer environments and automated storage monitoring across the fleet with Python.</p>
             <p className="card-text"><strong>Technology Used:</strong></p>
@@ -236,7 +168,6 @@ const Projects = () => {
               <img src="/oracle.svg" alt="Oracle" style={techLogoWide} />
               <img src="/linux.svg" alt="Linux" style={{ width: '90px', height: '50px', verticalAlign: 'middle', marginLeft: '20px', paddingTop: '5px' }} />
               <img src="/python.svg" alt="Python" style={{ ...techLogo, width: '50px', height: '50px' }} />
-              <img src="/flask.svg" alt="Flask" style={{ width: '70px', height: '40px', verticalAlign: 'middle', marginLeft: '10px', paddingTop: '5px' }} />
               <img src="/github.svg" alt="GitHub" style={techLogo} />
             </div>
           </div>

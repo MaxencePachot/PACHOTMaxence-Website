@@ -18,14 +18,33 @@ const Home = () => {
             </div>
             <div className="card-body text-center">
               <h4 className="card-title">Maxence PACHOT</h4>
-              <h6 className="card-category text-gray">Data Engineer · Lausanne, Switzerland</h6>
+              <h6 className="card-category text-gray">Data Engineer &amp; Oracle DBA · Lausanne, Switzerland</h6>
               <p className="card-description text-center">
-                Data Engineer with 3+ years of experience building cloud data platforms on Azure.
-                Specialised in Infrastructure as Code with Terraform, Databricks &amp; PySpark ETL, and Azure DevOps CI/CD.
+                Data Engineer with 3+ years of experience on both on-premises (SQL Server, Oracle)
+                and cloud data platforms (Azure — Databricks, PySpark). Oracle DBA, with working
+                knowledge of DevOps and Terraform.
               </p>
               <a href="/maxence_pachot_cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-round">Download CV</a>
               <span> </span>
               <a href="mailto:pachot.maxence@gmail.com" className="btn btn-primary btn-round">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Current Role */}
+      <div className="container mt-4">
+        <div className="row">
+          <div className="card">
+            <div className="card-header card-header-primary">
+              <h4 className="card-title">Current Role</h4>
+            </div>
+            <div className="card-body">
+              <strong>Data Engineer &amp; Oracle DBA</strong>
+              <div style={{ color: '#666' }}>ELCA Informatique SA — Lausanne, Switzerland · 03.2023 – Present</div>
+              <div style={{ fontSize: '0.9rem', color: '#666', marginTop: '8px' }}>
+                Swiss IT consulting firm. Delivering data platform and database projects for multiple customers across Healthcare, Retail, and Finance industries.
+              </div>
             </div>
           </div>
         </div>
@@ -52,7 +71,7 @@ const Home = () => {
                     <img src="/terraform.svg" alt="Terraform" style={skillIcon} />
                     Infrastructure as Code
                   </strong>
-                  <div>Terraform (modular, multi-target), Hub &amp; Spoke networking</div>
+                  <div>Working knowledge of Terraform — deploying and maintaining Azure infrastructure in production for real customer projects.</div>
                 </div>
                 <div className="col-md-6 mb-3">
                   <strong>
@@ -77,10 +96,10 @@ const Home = () => {
                 </div>
                 <div className="col-md-6 mb-3">
                   <strong>
-                    <img src="/sql-server.svg" alt="Databases" style={skillIcon} />
-                    Databases
+                    <img src="/oracle.svg" alt="Oracle" style={skillIcon} />
+                    Databases &amp; Administration
                   </strong>
-                  <div>SQL Server, Oracle (11g → 23c), MongoDB</div>
+                  <div>Oracle DBA (11g → 23c) — deployment, performance tuning, PL/SQL, monitoring. Also SQL Server &amp; MongoDB.</div>
                 </div>
               </div>
             </div>
@@ -153,7 +172,7 @@ const Home = () => {
               <h4 className="card-title">About &amp; Languages</h4>
             </div>
             <div className="card-body">
-              <p><strong>Languages:</strong> French (native) · English (professional)</p>
+              <p><strong>Languages:</strong> French (native) · English (C1 — TOEIC 910)</p>
               <p style={{ marginBottom: 0 }}>
                 Outside of work, I&apos;m a football fan — I enjoy both watching the game and analysing team performance data.
               </p>
