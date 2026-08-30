@@ -13,9 +13,9 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    // Every component here is fed by the dictionaries in src/i18n, which are
+    // the contract. Runtime prop validation would only restate them.
+    'react/prop-types': 'off',
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
 }

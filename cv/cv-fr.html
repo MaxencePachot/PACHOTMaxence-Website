@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Maxence Pachot - Data Platform Engineer - CV</title>
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+  <body>
+    <header class="head">
+      <div class="head__main">
+        <h1 class="head__name">Maxence PACHOT</h1>
+        <p class="head__role">Data Platform Engineer</p>
+        <p class="head__stack">Azure · Databricks · Terraform · dbt</p>
+        <p class="head__contact">
+          <span><a href="mailto:pachot.maxence@gmail.com">pachot.maxence@gmail.com</a></span>
+          <span>+41 76 391 15 69</span>
+          <span><a href="https://pachotmaxence.com">pachotmaxence.com</a></span>
+          <span
+            ><a href="https://www.linkedin.com/in/maxence-pachot-6801761b7"
+              >linkedin.com/in/maxence-pachot</a
+            ></span
+          >
+          <span><a href="https://github.com/MaxencePachot">github.com/MaxencePachot</a></span>
+        </p>
+        <p class="head__status">
+          Renens (VD), Suisse · Permis de séjour B · Permis de conduire catégorie B
+        </p>
+      </div>
+      <img class="head__photo" src="photo.jpg" alt="Maxence Pachot" />
+    </header>
+
+    <section class="section">
+      <h2 class="section__title">Profil</h2>
+      <p class="profile">
+        Je construis des plateformes data Azure de bout en bout : l’infrastructure Terraform,
+        l’ingestion, le lakehouse Databricks et la CI/CD qui les livre. Puis je les fais tenir en
+        production. Trois ans et demi de conseil informatique en Suisse : pharma, assurance sociale, santé.
+        Actuellement référent technique d’une plateforme data pharmaceutique.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Expérience professionnelle</h2>
+
+      <div class="employer">
+        <div class="employer__line">
+          <h3 class="employer__title">Data Engineer &amp; DBA Oracle - ELCA Informatique SA</h3>
+          <span class="employer__dates">03.2023 – aujourd’hui</span>
+        </div>
+        <p class="employer__meta">
+          Société suisse de conseil en informatique · Lausanne · projets de plateformes data et de
+          bases de données pour des clients de la pharma, de l’assurance sociale et de la santé
+        </p>
+      </div>
+
+      <div class="mission">
+        <div class="mission__line">
+          <h4 class="mission__title">Lakehouse Azure pour un groupe pharmaceutique</h4>
+          <span class="mission__dates">02.2026 – aujourd’hui</span>
+        </div>
+        <p class="mission__role">
+          Data Platform Engineer - référent technique depuis 09.2026 (2 développeurs)
+        </p>
+        <ul>
+          <li>
+            J’ai emmené le groupe d’une souscription Azure vide à un lakehouse en production
+            alimentant Power BI. J’en ai construit les quatre couches : infrastructure, ingestion,
+            ETL et CI/CD.
+          </li>
+          <li>
+            Landing zone Azure en Terraform : Hub &amp; Spoke, privée par défaut, avec les pipelines
+            Azure DevOps qui la déploient sur des agents internes au réseau et une fédération OIDC
+            plutôt que des secrets stockés.
+          </li>
+          <li>
+            Ingestion depuis un SQL Server on-premise via Azure Data Factory, vers un lakehouse
+            médaillon sur Databricks et Unity Catalog : moteur de merge SCD1/SCD2 et dimensions
+            conformes partagées entre domaines. Finance et marketing en production.
+          </li>
+          <li>
+            Comme référent technique, je porte la fondation partagée et les standards d’ingénierie (la
+            logique dans un package Python testé plutôt que dans des notebooks, des gates qualité en
+            CI, une revue obligatoire sur le cœur), je revois ce que livrent deux développeurs sur
+            leurs domaines métier, et j’anime les ateliers avec le métier.
+          </li>
+        </ul>
+        <p class="mission__stack">
+          Terraform · Azure · Databricks · Unity Catalog · PySpark · Delta Lake · Azure Data Factory
+          · SQL Server · Azure DevOps · pytest
+        </p>
+      </div>
+
+      <div class="mission">
+        <div class="mission__line">
+          <h4 class="mission__title">Data Platform as a Service - plateforme Azure multi-clients</h4>
+          <span class="mission__dates">06.2026 – aujourd’hui</span>
+        </div>
+        <p class="mission__role">Platform Engineer / DataOps</p>
+        <ul>
+          <li>
+            Onboarding complet d’un client sur la plateforme data Terraform partagée du groupe, sur
+            une souscription Azure neuve : bootstrap réseau, runners CI privés, et le pont
+            cross-tenant d’identité et de réseau qu’exigeait le montage, documenté en runbook.
+          </li>
+          <li>
+            Construction des couches gouvernance et pipeline : Unity Catalog (catalogs, external
+            locations, groupes, grants, secret scopes), Databricks Asset Bundles, dbt sur un SQL
+            warehouse Databricks, et promotion du développement vers la production.
+          </li>
+          <li>
+            Contribution de fonctionnalités et de correctifs au moteur partagé, et remontée à
+            l’équipe plateforme des frictions rencontrées pendant l’onboarding, chacune documentée
+            avec sa cause racine et un correctif proposé.
+          </li>
+        </ul>
+        <p class="mission__stack">
+          Terraform · Azure · Databricks · Unity Catalog · dbt · Databricks Asset Bundles · GitHub
+          Actions · Bicep · Bash
+        </p>
+      </div>
+
+      <div class="mission">
+        <div class="mission__line">
+          <h4 class="mission__title">
+            Migration vers dbt d’une plateforme de données d’assurance sociale
+          </h4>
+          <span class="mission__dates">12.2023 – aujourd’hui</span>
+        </div>
+        <p class="mission__role">Data Engineer</p>
+        <ul>
+          <li>
+            J’ai d’abord développé une partie de la chaîne historique, packages SSIS et procédures
+            stockées, puis migré de bout en bout toute cette couche de transformation vers dbt sur
+            SQL Server avec un collègue. Elle tourne aujourd’hui en production.
+          </li>
+          <li>
+            Cette couche vit désormais au sein d’une bibliothèque dbt partagée de plus d’un millier de modèles, publiée
+            en paquet versionné qu’importe chaque caisse de compensation, au lieu d’un ETL
+            reconstruit par caisse.
+          </li>
+          <li>
+            Je porte 5 de ses 26 domaines métier, dont les cotisations et les communications
+            fiscales, de l’extraction DB2 jusqu’à l’export, avec tests de régression et d’intégrité
+            sur chacun.
+          </li>
+          <li>
+            Modèles de données des couches de staging et cible, linting sqlfluff sur les fichiers
+            modifiés, et recueil des besoins métier avec les parties prenantes. L’ensemble est
+            orchestré avec Dagster.
+          </li>
+        </ul>
+        <p class="mission__stack">
+          dbt · SQL Server · T-SQL · DB2 · Dagster · sqlfluff · Python · Modélisation de données · Git
+        </p>
+      </div>
+
+      <div class="mission">
+        <div class="mission__line">
+          <h4 class="mission__title">
+            Réduction des coûts d’infrastructure d’une plateforme santé
+          </h4>
+          <span class="mission__dates">10.2023 – 01.2024</span>
+        </div>
+        <p class="mission__role">Data Engineer / DevOps</p>
+        <ul>
+          <li>
+            Migration des charges de travail de Kubernetes vers des conteneurs serverless Azure,
+            divisant la facture d’infrastructure par environ dix.
+          </li>
+          <li>
+            Conteneurisation des services avec Docker, automatisation de leur déploiement via Azure
+            DevOps, et ajout d’une nouvelle source de données avec les fonctionnalités Python et
+            FastAPI qui la consomment.
+          </li>
+        </ul>
+        <p class="mission__stack">
+          Conteneurs serverless Azure · Docker · Python · FastAPI · MongoDB · Azure DevOps
+        </p>
+      </div>
+
+      <div class="mission">
+        <div class="mission__line">
+          <h4 class="mission__title">Administration de bases de données Oracle</h4>
+          <span class="mission__dates">03.2023 – aujourd’hui</span>
+        </div>
+        <p class="mission__role">Administrateur de bases de données</p>
+        <ul>
+          <li>
+            Déploiement et exploitation de bases Oracle de la 11g à la 23c sur les environnements
+            clients, traitement des incidents via JIRA, écriture et optimisation de PL/SQL.
+          </li>
+          <li>
+            Automatisation en Python de la supervision des tablespaces et du disque sur l’ensemble du
+            parc, pour détecter la saturation avant l’incident.
+          </li>
+        </ul>
+        <p class="mission__stack">Oracle 11g–23c · PL/SQL · SQL · Python · Linux · JIRA</p>
+      </div>
+
+      <div class="employer avoid-break" style="margin-top: 5mm">
+        <div class="employer__line">
+          <h3 class="employer__title">Développeur full stack, stage - SOFI Groupe</h3>
+          <span class="employer__dates">04.2022 – 08.2022</span>
+        </div>
+        <p class="employer__meta">France</p>
+      </div>
+      <div class="mission">
+        <ul>
+          <li>
+            Développement d’une interface web et d’une API permettant à des partenaires externes de
+            gérer les catalogues de rachat, et d’un système réconciliant les écarts entre deux bases
+            de l’entreprise, intégré aux processus ETL existants.
+          </li>
+        </ul>
+        <p class="mission__stack">PHP · SQL Server · MySQL · Python · Git</p>
+      </div>
+    </section>
+
+    <section class="section avoid-break">
+      <h2 class="section__title">Compétences - par fréquence d’usage réelle</h2>
+      <div class="skill-row">
+        <div class="skill-row__label"><span class="level">Au quotidien</span></div>
+        <div class="skill-row__value">
+          <b>Azure</b> : Databricks, Data Factory, ADLS Gen2, Key Vault, VNet et private endpoints,
+          NAT gateway, Log Analytics, service principals Entra ID · <b>Terraform</b> : modules
+          réutilisables, state distant, découpage multi-environnements, tflint, terraform-docs,
+          pre-commit · <b>Databricks</b> : Unity Catalog, Delta Lake, Delta Live Tables et Lakeflow,
+          Auto Loader, Asset Bundles, SQL Warehouses, architecture médaillon, merge SCD1/SCD2 ·
+          <b>dbt</b> · <b>CI/CD</b> : Azure DevOps, GitHub Actions, runners auto-hébergés en réseau
+          privé, OIDC et workload identity federation, branch policies · <b>Python</b> (PySpark,
+          pytest, ruff), <b>SQL</b>, T-SQL, PL/SQL, Bash · développement assisté par IA avec Claude
+          Code
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__label"><span class="level level--solid">Solide</span></div>
+        <div class="skill-row__value">
+          Administration <b>Oracle 11g–23c</b> : déploiement, tuning de performance, PL/SQL,
+          supervision · <b>SQL Server</b> et dbt sur SQL Server · Bicep · Linux
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row__label"><span class="level level--working">Notions</span></div>
+        <div class="skill-row__value">Dagster · Docker · FastAPI · MongoDB · React · Vite</div>
+      </div>
+    </section>
+
+    <div class="two-col section">
+      <section>
+        <h2 class="section__title">Certifications</h2>
+        <div class="entry">
+          <div class="entry__line">
+            <span class="entry__title">Databricks Certified Data Engineer Associate</span>
+            <span class="entry__dates">nov. 2024</span>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry__line">
+            <span class="entry__title">Microsoft Certified: Azure Fundamentals (AZ-900)</span>
+            <span class="entry__dates">sept. 2023</span>
+          </div>
+        </div>
+
+        <h2 class="section__title" style="margin-top: 4mm">Langues</h2>
+        <div class="entry__meta" style="font-size: 8.8pt; color: var(--body)">
+          Français : langue maternelle · Anglais : C1 (TOEIC 910)
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section__title">Formation</h2>
+        <div class="entry">
+          <div class="entry__line">
+            <span class="entry__title"
+              >Master 2 MIAGE / MBDS <span class="entry__meta">- Université Côte d’Azur</span></span
+            >
+            <span class="entry__dates">2022 – 2023</span>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry__line">
+            <span class="entry__title"
+              >Diplôme d’ingénieur <span class="entry__meta">- ESTIA, Bidart (FR)</span></span
+            >
+            <span class="entry__dates">2020 – 2023</span>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry__line">
+            <span class="entry__title"
+              >CPGE PCSI / PC <span class="entry__meta">- Lycée Jacques Amyot, Melun (FR)</span></span
+            >
+            <span class="entry__dates">2018 – 2020</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

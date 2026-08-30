@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2') format('woff2');
+}
+
+/* A4 CV stylesheet, shared by cv-en.html and cv-fr.html.
+   Rendered to PDF with headless Chrome - see cv/README.md. */
+
+@page {
+  size: A4;
+  margin: 14mm 15mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #fb8c00;
+  --ink: #16181d;
+  --body: #33383f;
+  --muted: #6b7280;
+  --line: #d9dde2;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  font-size: 9.2pt;
+  line-height: 1.42;
+  color: var(--body);
+}
+
+/* Header ------------------------------------------------------------------ */
+.head {
+  display: flex;
+  gap: 12mm;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--accent);
+}
+
+.head__main {
+  flex: 1;
+}
+
+.head__name {
+  margin: 0;
+  font-size: 21pt;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.head__role {
+  margin: 1mm 0 0;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.head__stack {
+  margin: 0.5mm 0 0;
+  font-size: 9pt;
+  color: var(--muted);
+}
+
+.head__contact {
+  margin: 3mm 0 0;
+  font-size: 8.6pt;
+  color: var(--body);
+}
+
+.head__contact span::after {
+  content: '  ·  ';
+  color: var(--line);
+}
+
+.head__contact span:last-child::after {
+  content: '';
+}
+
+.head__contact a {
+  color: var(--body);
+  text-decoration: none;
+}
+
+.head__status {
+  margin: 1.5mm 0 0;
+  font-size: 8.6pt;
+  color: var(--muted);
+}
+
+.head__photo {
+  width: 27mm;
+  height: 36mm;
+  object-fit: cover;
+  border-radius: 2mm;
+  flex: 0 0 auto;
+}
+
+/* Sections ---------------------------------------------------------------- */
+.section {
+  margin-top: 5mm;
+}
+
+.section__title {
+  margin: 0 0 2.5mm;
+  font-size: 9pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink);
+  padding-bottom: 1mm;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile {
+  margin: 0;
+  font-size: 9.3pt;
+}
+
+/* Employer / role --------------------------------------------------------- */
+.employer {
+  margin-bottom: 2.5mm;
+}
+
+.employer__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.employer__title {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.employer__dates {
+  font-size: 8.5pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.employer__meta {
+  margin: 0.5mm 0 0;
+  font-size: 8.6pt;
+  color: var(--muted);
+}
+
+/* Mission ----------------------------------------------------------------- */
+/* Missions may split across pages - forbidding it wastes a third of a page.
+   What must not split is a heading from its first bullet. */
+.mission {
+  margin: 3.4mm 0 0 0;
+  padding-left: 3.5mm;
+  border-left: 2px solid var(--accent);
+}
+
+.mission__line,
+.mission__role {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.mission li,
+.employer {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.mission__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.mission__title {
+  margin: 0;
+  font-size: 9.4pt;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.mission__dates {
+  font-size: 8.3pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.mission__role {
+  margin: 0.3mm 0 1.2mm;
+  font-size: 8.5pt;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mission ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mission li {
+  position: relative;
+  padding-left: 3mm;
+  margin-bottom: 1.3mm;
+}
+
+.mission li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.5mm;
+  width: 1.1mm;
+  height: 1.1mm;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.mission__stack {
+  margin: 1mm 0 0;
+  font-size: 8.1pt;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Skills, education, misc ------------------------------------------------- */
+.skill-row {
+  display: flex;
+  gap: 3mm;
+  margin-bottom: 1.2mm;
+  align-items: baseline;
+}
+
+.skill-row__label {
+  flex: 0 0 27mm;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 8.6pt;
+}
+
+.skill-row__value {
+  flex: 1;
+}
+
+.level {
+  display: inline-block;
+  font-size: 7.2pt;
+  font-weight: 600;
+  padding: 0.2mm 1.5mm;
+  border-radius: 4px;
+  background: #fff3e2;
+  color: #b56500;
+  margin-left: 0;
+  white-space: nowrap;
+}
+
+.level--solid {
+  background: #f1f8e6;
+  color: #4a6a1a;
+}
+
+.level--working {
+  background: #f2f3f5;
+  color: var(--muted);
+}
+
+.two-col {
+  display: flex;
+  gap: 8mm;
+}
+
+.two-col > * {
+  flex: 1;
+}
+
+.entry {
+  margin-bottom: 1.2mm;
+}
+
+.entry__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.entry__title {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 8.8pt;
+}
+
+.entry__dates {
+  font-size: 8.2pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry__meta {
+  font-size: 8.3pt;
+  color: var(--muted);
+}
+
+.inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inline-list li {
+  margin-bottom: 1.2mm;
+  font-size: 8.8pt;
+}
+
+.avoid-break {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* The closing certifications / education block sits tighter than a normal
+   section so it stays on page two. */
+.two-col.section {
+  margin-top: 4.5mm;
+}
+
+/* Education/certification entries fit on one line: the school is a muted
+   continuation of the title, not a second row. */
+.entry__title .entry__meta {
+  font-weight: 400;
+}

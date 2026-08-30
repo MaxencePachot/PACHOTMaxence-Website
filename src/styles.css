@@ -1,113 +1,841 @@
-@import './fonts/fonts.css';
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Material Kit 2 (Bootstrap 5) provides the reset, the grid and the navbar.
+   Everything below is this site's own layer.
 
-html, body {
-  width: 100%;
-  height: 100%;
+   Two rules this layer exists to enforce:
+   1. One typeface. Material Kit points every heading at var(--bs-font-sans-serif)
+      (Roboto, Helvetica, Arial), which on most desktops resolves to Arial while
+      the body text uses the webfont. That split is repaired here.
+   2. One scale. Sizes and spacing come from the steps below, never from a
+      hand-picked value, so the page has a rhythm instead of 19 near-identical
+      font sizes.
+   --------------------------------------------------------------------------- */
+:root {
+  /* Type ------------------------------------------------------------------ */
+  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  --t-xs: 0.75rem; /* 12px  chips, uppercase labels */
+  --t-sm: 0.875rem; /* 14px  dates, footer, captions */
+  --t-md: 0.9375rem; /* 15px  secondary text and metadata */
+  --t-base: 1rem; /* 16px  body copy */
+  --t-lg: 1.3125rem; /* 21px  section titles */
+  --t-xl: 1.625rem; /* 26px  page titles, statistics */
+  --t-hero: clamp(1.875rem, 4vw, 2.5rem);
+
+  /* Butterick puts body line spacing at 120-145% of the size; 1.55 sits just
+     above it, which suits a screen measure. Headings get much less. */
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-body: 1.55;
+
+  /* Bringhurst's measure: 45 to 75 characters, 66 ideal. */
+  --measure: 68ch;
+
+  /* Space ----------------------------------------------------------------- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 2.5rem;
+
+  /* Colour ---------------------------------------------------------------- */
+  /* --accent is for graphic marks only: rules, bullets, bars. It is 2.37:1 on
+     white, so it must never carry text. --accent-ink is the text-safe orange
+     (5.4:1 on white, 5.0:1 on --accent-soft). */
+  --accent: #fb8c00;
+  --accent-ink: #a15700;
+  --accent-soft: #fff5e8;
+
+  --ink: #16181d;
+  --body: #3d434d;
+  --muted: #5f6673;
+  --link: #0a53be;
+
+  --surface: #ffffff;
+  --bg: #f6f7f9;
+  --line: #e4e7eb;
+  --line-strong: #d3d8de;
+
+  --radius: 8px;
+  --max: 940px;
+
+  /* Material Kit resolves every heading through this variable. Redefining it
+     is what actually removes Arial from the page. */
+  --bs-font-sans-serif: var(--font-sans);
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-.container-flex {
+body {
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font-sans);
+  font-size: var(--t-base);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-shell {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.card-avatar {
-  text-align: center;
+.container {
+  max-width: var(--max);
 }
 
-.card-avatar .img {
-  width: 40%;
-  border-radius: 2%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+main {
+  flex: 1 0 auto;
 }
 
-.card-avatar .img:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.card {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.col-lg-9 {
-  max-width: 95%;
-  padding-left: 50px;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: #ffffff;
-}
-
-.navbar .nav-link, .navbar .navbar-brand {
-  color: #ffffff;
-  font-size: .875rem;
-}
-
-.bg-primary {
-  background-color: #fb8c00 !important;
-}
-
-.btn-primary, .btn.bg-gradient-primary {
-  background-color: #212529 !important;
-  border-color: #212529 !important;
-  color: #ffffff !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-
-.btn-primary:hover, .btn.bg-gradient-primary:hover {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn.bg-gradient-primary:not(:disabled):not(.disabled).active,
-.btn.bg-gradient-primary:not(:disabled):not(.disabled):active,
-.show > .btn-primary.dropdown-toggle,
-.show > .btn.bg-gradient-primary.dropdown-toggle {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-.btn-check:focus-visible + .btn, .btn:focus-visible {
-  border-color: #fb8c00;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(251, 140, 0, 0.35);
+/* Pages that are one column of prose from top to bottom (Projects, 404) sit in
+   a narrower column, so the text block and the card it lives in are roughly the
+   same width instead of leaving a third of the card empty. The Home page keeps
+   the wide container because its grids need it. */
+main.container.section {
+  max-width: 780px;
 }
 
 a {
-  color: #0d6efd;
+  color: var(--link);
+  text-decoration: none;
 }
 
 a:hover {
-  color: #fb8c00;
+  color: var(--accent-ink);
+  text-decoration: underline;
 }
 
-.project-meta {
-  font-size: 0.875rem;
-  color: #666;
+:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
-.project-meta .meta-sep {
-  margin: 0 8px;
-  color: #bbb;
+/* Headings.
+   Material Kit sets a flat letter-spacing of -0.05rem on h1 through h4. That is
+   -0.05em on a 16px title but a crushing -0.19em once a title is small.
+   Tracking is set here in em, and only where the size is large enough to want
+   it. Weight, not size, separates a sub-head from body copy. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  line-height: var(--lh-tight);
+  letter-spacing: 0;
 }
 
-.project-outcome {
-  color: #212529;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  padding: 10px 14px;
-  background-color: #fff8ef;
-  border-left: 3px solid #fb8c00;
-  border-radius: 4px;
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/* Material Kit ships p { font-weight: 300 }, a weight this site does not load,
+   so every paragraph was asking for a file that is not there. */
+p,
+.lead {
+  font-weight: 400;
+  line-height: var(--lh-body);
+}
+
+/* Skip link ---------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1100;
+  padding: var(--s-2) var(--s-4);
+  background: var(--ink);
+  color: #fff;
+  border-radius: 0 0 var(--radius) 0;
+}
+
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+}
+
+/* Navbar.
+   The header used to be a full-bleed block of --accent carrying white text at
+   2.37:1: both the loudest thing on a deliberately quiet page and a plain WCAG
+   failure. It is now a quiet surface, and the accent marks the current page and
+   nothing else. */
+.site-nav {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: var(--s-2) 0;
+}
+
+.site-nav .navbar-brand {
+  color: var(--ink);
+  font-size: var(--t-base);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.site-nav .navbar-brand:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav .nav-link {
+  color: var(--body);
+  font-size: var(--t-md);
+  font-weight: 400;
+  padding: var(--s-1) var(--s-3);
+  border-radius: 6px;
+}
+
+.site-nav .nav-link:hover {
+  color: var(--ink);
+  background: var(--bg);
+  text-decoration: none;
+}
+
+.site-nav .nav-link.active {
+  color: var(--ink);
+  font-weight: 600;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.site-nav .nav-lang {
+  border: 1px solid var(--line-strong);
+  margin-left: var(--s-2);
+  font-size: var(--t-sm);
+}
+
+.site-nav .navbar-toggler {
+  border-color: var(--line-strong);
+  padding: var(--s-1) var(--s-2);
+}
+
+.site-nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2316181d' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Section shell ------------------------------------------------------------ */
+.section {
+  margin-top: var(--s-5);
+}
+
+.section:first-of-type {
+  margin-top: var(--s-6);
+}
+
+/* Flat panels. A border already separates a card from the page; a border plus a
+   shadow plus a tinted header gradient is three ways of saying the same thing. */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: var(--s-5);
+  overflow: hidden;
+}
+
+.panel__header {
+  padding: var(--s-4) var(--s-5) var(--s-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.panel__title {
+  margin: 0;
+  font-size: var(--t-lg);
+  letter-spacing: -0.01em;
+}
+
+.panel__note {
+  margin: var(--s-1) 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-md);
+  color: var(--muted);
+}
+
+.panel__body {
+  padding: var(--s-5);
+}
+
+.panel__body > p {
+  max-width: var(--measure);
+}
+
+.panel__body > p:last-child,
+.panel__body > .mb-0 {
+  margin-bottom: 0;
+}
+
+/* Hero --------------------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: var(--s-6);
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--s-6);
+}
+
+.hero__photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.hero__name {
+  margin: 0;
+  font-size: var(--t-hero);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero__role {
+  margin: var(--s-1) 0 0;
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-size: var(--t-lg);
+  line-height: var(--lh-snug);
+}
+
+.hero__stack,
+.hero__location {
+  margin: var(--s-1) 0 0;
+  color: var(--muted);
+  font-size: var(--t-md);
+  line-height: var(--lh-snug);
+}
+
+.hero__pitch {
+  margin: var(--s-4) 0 0;
+  max-width: var(--measure);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+}
+
+/* Buttons.
+   Material Kit uppercases button labels and gives them no tracking, the one
+   case Butterick says always needs it. Sentence case is quieter and sidesteps
+   the question. */
+.btn.btn-dark,
+.btn.btn-outline {
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--t-md);
+  letter-spacing: 0;
+  text-transform: none;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn.btn-dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn.btn-dark:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.btn.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.btn.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* Stats -------------------------------------------------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--s-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats__item {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--s-3);
+}
+
+.stats__value {
+  display: block;
+  font-size: var(--t-xl);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats__label {
+  display: block;
+  font-size: var(--t-md);
+  color: var(--muted);
+  line-height: var(--lh-snug);
+  margin-top: var(--s-1);
+}
+
+/* Tiles -------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.tile__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-2);
+  font-size: var(--t-base);
+  font-weight: 600;
+}
+
+.tile__icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.tile__body {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+  color: var(--body);
+}
+
+/* Chips -------------------------------------------------------------------- */
+.chip {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  padding: 0 var(--s-2);
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: #fafbfc;
+  white-space: nowrap;
+}
+
+.chip--daily {
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border-color: #ffd9a8;
+}
+
+.chip--solid {
+  color: #3f6212;
+  background: #f4fbe9;
+  border-color: #d6ecb4;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip--stack {
+  font-weight: 400;
+  color: var(--body);
+  background: #f4f5f7;
+}
+
+/* Lists -------------------------------------------------------------------- */
+.ticks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ticks li {
+  position: relative;
+  max-width: var(--measure);
+  padding-left: var(--s-4);
+  margin-bottom: var(--s-3);
+  font-size: var(--t-base);
+}
+
+.ticks li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.ticks li:last-child {
+  margin-bottom: 0;
+}
+
+.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Role and entries --------------------------------------------------------- */
+.role__title {
+  margin: 0;
+  font-size: var(--t-base);
+  font-weight: 600;
+}
+
+.role__meta {
+  margin: var(--s-1) 0 0;
+  color: var(--muted);
+  font-size: var(--t-md);
+}
+
+.role__body {
+  margin: var(--s-3) 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+}
+
+/* The one place the accent still fills a block: the single sentence per section
+   worth reading if nothing else is. */
+.callout {
+  margin: var(--s-4) 0 0;
+  max-width: var(--measure);
+  padding: var(--s-3) var(--s-4);
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink);
+  font-size: var(--t-base);
+}
+
+.entry {
+  padding-bottom: var(--s-3);
+  margin-bottom: var(--s-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.entry__title {
+  margin: 0;
+  font-size: var(--t-base);
+  font-weight: 600;
+}
+
+.entry__meta {
+  margin: var(--s-1) 0 0;
+  color: var(--muted);
+  font-size: var(--t-md);
+}
+
+.entry__detail {
+  margin: var(--s-1) 0 0;
+  max-width: var(--measure);
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+
+.cert,
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-3);
+  font-size: var(--t-base);
+}
+
+.cert:last-child,
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cert__icon,
+.contact-list img {
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.cert__date {
+  color: var(--muted);
+  font-size: var(--t-sm);
+}
+
+/* Projects ----------------------------------------------------------------- */
+.page-head {
+  margin-bottom: var(--s-5);
+}
+
+.page-head__title {
+  margin: 0;
+  font-size: var(--t-xl);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.page-head__intro {
+  margin: var(--s-2) 0 0;
+  color: var(--muted);
+  max-width: var(--measure);
+  font-size: var(--t-md);
+}
+
+.project__meta {
+  margin: var(--s-1) 0 0;
+  font-size: var(--t-md);
+  color: var(--muted);
+}
+
+.project__sep {
+  margin: 0 var(--s-2);
+  color: var(--line-strong);
+}
+
+/* The outcome callout opens the card, so it carries the gap to the first
+   section rather than relying on that section's (suppressed) top margin. */
+.project .callout {
+  margin: 0 0 var(--s-5);
+}
+
+.project__section {
+  margin-top: var(--s-5);
+}
+
+.project__section:first-of-type {
+  margin-top: 0;
+}
+
+.project__section-title {
+  font-size: var(--t-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 var(--s-2);
+  font-weight: 600;
+}
+
+.project__section p {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: var(--t-base);
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.logo--wide {
+  width: 56px;
+}
+
+.logos:hover .logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* Footer ------------------------------------------------------------------- */
+.site-footer {
+  margin-top: var(--s-7);
+  padding: var(--s-5) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.site-footer__line {
+  margin: 0;
+  font-size: var(--t-sm);
+  color: var(--body);
+}
+
+.site-footer__muted {
+  margin-top: var(--s-1);
+  color: var(--muted);
+}
+
+/* Responsive --------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    padding: var(--s-5);
+  }
+
+  .hero__photo {
+    max-width: 150px;
+  }
+
+  .panel__header {
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
+  }
+
+  .panel__body {
+    padding: var(--s-4);
+  }
+
+  .site-nav .nav-link.active {
+    box-shadow: inset 2px 0 0 var(--accent);
+  }
+
+  .site-nav .nav-lang {
+    display: inline-block;
+    margin: var(--s-2) 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print -------------------------------------------------------------------- */
+@media print {
+  .site-nav,
+  .site-footer,
+  .hero__actions,
+  .logos,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .panel,
+  .hero {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    color: #555;
+  }
+}
+
+/* Plain blocks -------------------------------------------------------------
+   The short reference sections at the foot of the page (certifications,
+   languages, contact) are not cards. Ten identical panels stacked to the
+   bottom is what makes a page read as generated: the container has to vary
+   with the density of what it holds. */
+.section--plain {
+  margin-top: var(--s-6);
+}
+
+.plain-block {
+  border-top: 1px solid var(--line);
+  padding-top: var(--s-5);
+}
+
+.plain-block__title {
+  margin: 0;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.plain-block__note {
+  margin: var(--s-1) 0 0;
+  font-size: var(--t-md);
+  color: var(--muted);
+}
+
+.plain-block__body {
+  margin-top: var(--s-4);
+  max-width: var(--measure);
+}
+
+.plain-block__body > p:last-child {
+  margin-bottom: 0;
 }
