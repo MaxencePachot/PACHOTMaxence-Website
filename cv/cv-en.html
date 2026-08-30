@@ -6,21 +6,39 @@
     <link rel="stylesheet" href="cv.css" />
   </head>
   <body>
+    <svg class="icon-defs" aria-hidden="true" focusable="false">
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+        <path d="M3 6.5l9 6.5 9-6.5" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <path d="M7.2 10.2v6.4M7.2 7.6v.1" />
+        <path d="M11.2 16.6v-6.4M11.2 12.9c0-1.6 1-2.7 2.5-2.7s2.6 1 2.6 2.9v3.4" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path d="M9.3 20.4c-4.4 1.3-4.4-2.3-6.1-2.7m12.2 5.3v-3.6a3.1 3.1 0 0 0-.9-2.4c2.9-.3 6-1.4 6-6.5a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12.3 12.3 0 0 0-6.5 0C6.4 2.9 5.3 3.2 5.3 3.2a4.7 4.7 0 0 0-.1 3.5 5 5 0 0 0-1.4 3.6c0 5 3 6.1 5.9 6.4a3.1 3.1 0 0 0-.8 2.4V23" />
+      </symbol>
+    </svg>
     <header class="head">
       <div class="head__main">
         <h1 class="head__name">Maxence PACHOT</h1>
         <p class="head__role">Data Engineer · Platform &amp; DataOps</p>
         <p class="head__stack">Azure · Databricks · Terraform · dbt</p>
         <p class="head__contact">
-          <span><a href="mailto:pachot.maxence@gmail.com">pachot.maxence@gmail.com</a></span>
-          <span>+41 76 391 15 69</span>
-          <span><a href="https://pachotmaxence.com">pachotmaxence.com</a></span>
-          <span
-            ><a href="https://www.linkedin.com/in/maxence-pachot-6801761b7"
-              >linkedin.com/in/maxence-pachot</a
-            ></span
-          >
-          <span><a href="https://github.com/MaxencePachot">github.com/MaxencePachot</a></span>
+          <a class="head__link" href="mailto:pachot.maxence@gmail.com"><svg class="head__icon" aria-hidden="true"><use href="#i-mail" /></svg>pachot.maxence@gmail.com</a>
+          <span class="head__link"><svg class="head__icon" aria-hidden="true"><use href="#i-phone" /></svg>+41 76 391 15 69</span>
+          <a class="head__link" href="https://pachotmaxence.com"><svg class="head__icon" aria-hidden="true"><use href="#i-globe" /></svg>pachotmaxence.com</a>
+          <a class="head__link" href="https://www.linkedin.com/in/maxence-pachot-6801761b7"><svg class="head__icon" aria-hidden="true"><use href="#i-linkedin" /></svg>maxence-pachot</a>
+          <a class="head__link" href="https://github.com/MaxencePachot"><svg class="head__icon" aria-hidden="true"><use href="#i-github" /></svg>MaxencePachot</a>
         </p>
         <p class="head__status">
           Renens (VD), Switzerland · Swiss B residence permit · Category B driving licence
@@ -32,10 +50,10 @@
     <section class="section">
       <h2 class="section__title">Profile</h2>
       <p class="profile">
-        I build Azure data platforms end to end: the Terraform infrastructure, the ingestion, the
-        Databricks lakehouse and the CI/CD that ships it. Then I keep them running in production.
-        Three and a half years in Swiss IT consulting, across pharma, social insurance and healthcare.
-        Currently technical referent on a pharmaceutical data platform.
+        Three and a half years in Swiss IT consulting, across pharmaceuticals, social insurance and
+        healthcare. I design and maintain Azure data platforms, from the Terraform infrastructure to
+        the Databricks lakehouse, CI/CD included. I am currently the technical lead on a
+        pharmaceutical data platform.
       </p>
     </section>
 
@@ -44,12 +62,12 @@
 
       <div class="employer">
         <div class="employer__line">
-          <h3 class="employer__title">Data Engineer &amp; Oracle DBA - ELCA Informatique SA</h3>
+          <h3 class="employer__title">Engineer, Business Line Data Analytics &amp; AI · ELCA Informatique SA</h3>
           <span class="employer__dates">03.2023 – present</span>
         </div>
         <p class="employer__meta">
           Swiss IT consulting firm · Lausanne, Switzerland · data platform and database projects for
-          customers in pharma, social insurance and healthcare
+          customers in pharmaceuticals, social insurance and healthcare
         </p>
       </div>
 
@@ -59,12 +77,12 @@
           <span class="mission__dates">02.2026 – present</span>
         </div>
         <p class="mission__role">
-          Data Platform Engineer - technical referent since 09.2026 (2 developers)
+          Data Platform Engineer, technical lead since 09.2026 (2 developers)
         </p>
         <ul>
           <li>
-            Took the group from an empty Azure subscription to a production lakehouse feeding Power
-            BI. I built all four layers: infrastructure, ingestion, ETL and CI/CD.
+            The group went from an empty Azure subscription to a production lakehouse feeding Power
+            BI. I built its four layers: infrastructure, ingestion, ETL and CI/CD.
           </li>
           <li>
             Azure landing zone in Terraform: Hub &amp; Spoke, private by default, with the Azure
@@ -77,10 +95,9 @@
             dimensions shared across domains. Finance and marketing in production.
           </li>
           <li>
-            As technical referent, I own the shared foundation and the engineering standards (logic in a
-            tested Python package rather than notebooks, quality gates in CI, mandatory review on the
-            core), review what two developers deliver on their own business domains, and run the
-            workshops with the business.
+            As technical lead, I review the code of the shared foundation, on which two developers
+            each deliver their own business domain, and I run the workshops with the business. I moved the logic out of the
+            notebooks into a tested Python package, and made review mandatory on the shared core.
           </li>
         </ul>
         <p class="mission__stack">
@@ -97,9 +114,9 @@
         <p class="mission__role">Platform Engineer / DataOps</p>
         <ul>
           <li>
-            Onboarded a client end to end onto the group's shared Terraform data platform, on a new
+            Onboarded a client end to end onto the group's shared Terraform data platform, in a new
             Azure subscription: network bootstrap, private CI runners, and the cross-tenant identity
-            and network bridge the setup required, documented as a runbook.
+            and network bridge, documented as a runbook.
           </li>
           <li>
             Built the governance and pipeline layers: Unity Catalog (catalogs, external locations,
@@ -126,9 +143,8 @@
         <p class="mission__role">Data Engineer</p>
         <ul>
           <li>
-            I first built part of the legacy chain myself, SSIS packages and stored procedures, then
-            migrated that whole transformation layer to dbt on SQL Server with one colleague, end to
-            end. It now runs in production.
+            I built part of the legacy chain, SSIS packages and stored procedures, then migrated it
+            entirely to dbt on SQL Server with one colleague. It now runs in production.
           </li>
           <li>
             That layer now lives inside a shared dbt library of over a thousand models, released as a versioned
@@ -191,7 +207,7 @@
 
       <div class="employer avoid-break" style="margin-top: 5mm">
         <div class="employer__line">
-          <h3 class="employer__title">Full Stack Developer, internship - SOFI Groupe</h3>
+          <h3 class="employer__title">Full Stack Developer, internship · SOFI Groupe</h3>
           <span class="employer__dates">04.2022 – 08.2022</span>
         </div>
         <p class="employer__meta">France</p>
@@ -209,7 +225,7 @@
     </section>
 
     <section class="section avoid-break">
-      <h2 class="section__title">Skills - by how often I actually use them</h2>
+      <h2 class="section__title">Skills, by how often I use them</h2>
       <div class="skill-row">
         <div class="skill-row__label"><span class="level">Every day</span></div>
         <div class="skill-row__value">
@@ -265,7 +281,7 @@
         <div class="entry">
           <div class="entry__line">
             <span class="entry__title"
-              >Master 2 MIAGE / MBDS <span class="entry__meta">- Université Côte d'Azur</span></span
+              >Master 2 MIAGE / MBDS <span class="entry__meta">· Université Côte d'Azur</span></span
             >
             <span class="entry__dates">2022 – 2023</span>
           </div>
@@ -273,7 +289,7 @@
         <div class="entry">
           <div class="entry__line">
             <span class="entry__title"
-              >Engineering degree <span class="entry__meta">- ESTIA, Bidart (FR)</span></span
+              >Engineering degree <span class="entry__meta">· ESTIA, Bidart (FR)</span></span
             >
             <span class="entry__dates">2020 – 2023</span>
           </div>
@@ -281,7 +297,7 @@
         <div class="entry">
           <div class="entry__line">
             <span class="entry__title"
-              >CPGE PCSI / PC <span class="entry__meta">- Lycée Jacques Amyot, Melun (FR)</span></span
+              >CPGE PCSI / PC <span class="entry__meta">· Lycée Jacques Amyot, Melun (FR)</span></span
             >
             <span class="entry__dates">2018 – 2020</span>
           </div>

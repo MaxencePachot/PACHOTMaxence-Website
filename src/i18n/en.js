@@ -6,7 +6,7 @@ const en = {
     home: {
       title: 'Maxence Pachot - Data Engineer, Platform & DataOps',
       description:
-        'Data Engineer in Lausanne, Switzerland, on platform and DataOps. I build Azure data platforms end to end: Terraform infrastructure, ingestion, Databricks lakehouse and CI/CD.',
+        'Data Engineer in Lausanne, Switzerland, on platform and DataOps. I design and maintain Azure data platforms: Terraform infrastructure, ingestion, Databricks lakehouse and CI/CD.',
     },
     projects: {
       title: 'Projects - Maxence Pachot',
@@ -24,10 +24,11 @@ const en = {
     home: 'Home',
     projects: 'Projects',
     cv: 'CV',
-    menu: 'Toggle navigation',
+    menu: 'Open the menu',
+    menuClose: 'Close the menu',
+    language: 'Choose a language',
+    newTab: '(PDF, opens in a new tab)',
     skip: 'Skip to content',
-    switchTo: 'Lire en français',
-    switchShort: 'FR',
   },
 
   cvFile: '/maxence_pachot_cv.pdf',
@@ -39,19 +40,9 @@ const en = {
     location: 'ELCA Informatique · Lausanne, Switzerland',
     photoAlt: 'Portrait of Maxence Pachot',
     pitch:
-      'I build Azure data platforms end to end: the Terraform infrastructure, the ingestion, the Databricks lakehouse and the CI/CD that ships it. Then I keep them running in production.',
+      'I design and maintain Azure data platforms, from the Terraform infrastructure to the Databricks lakehouse, CI/CD included. Three and a half years in Swiss IT consulting: pharmaceuticals, social insurance, healthcare.',
     cv: 'Download CV',
     contact: 'Get in touch',
-  },
-
-  proof: {
-    heading: 'In numbers',
-    note: 'All of it from work delivered over the last twelve months.',
-    items: [
-      { value: '5', label: 'business domains I own in a shared dbt library, out of 26' },
-      { value: '10', label: 'reusable Terraform modules running in production on Azure' },
-      { value: '2', label: 'pull requests merged into the group’s shared IaC engine' },
-    ],
   },
 
   whatIDo: {
@@ -60,34 +51,34 @@ const en = {
       {
         icon: '/terraform.svg',
         title: 'Platform & infrastructure',
-        body: 'Azure landing zones in Terraform - Hub & Spoke, private endpoints by default, NAT gateway, private DNS. Databricks workspaces with Unity Catalog. CI/CD on Azure DevOps and GitHub Actions, authenticated with OIDC rather than stored secrets.',
+        body: 'Azure landing zones in Terraform: Hub & Spoke, private endpoints by default, NAT gateway, private DNS. Databricks workspaces with Unity Catalog. CI/CD on Azure DevOps and GitHub Actions, authenticated with OIDC, no stored secrets.',
       },
       {
         icon: '/databricks.svg',
         title: 'Data engineering',
-        body: 'Ingestion from on-premises SQL Server and SaaS sources, a medallion lakehouse on Delta, SCD1/SCD2 merge engines, dbt transformation layers. Written in Python and SQL, and unit-tested like application code.',
+        body: 'Ingestion from on-premises SQL Server and SaaS sources, a medallion lakehouse on Delta, SCD1/SCD2 merge engines, dbt transformation layers. In Python and SQL, tested like application code.',
       },
       {
         icon: '/azuredevops.svg',
-        title: 'Making it last',
-        body: 'I ship code other people can pick up: logic in packages rather than notebooks, lint and tests as hard CI gates, code ownership on the shared foundation, conventions written down. And I run the workshops with the business.',
+        title: 'Handover and operation',
+        body: 'I ship code another team can pick up: logic in tested packages rather than notebooks, tests and lint that block the CI, mandatory review on shared code.',
       },
     ],
   },
 
   currentRole: {
     heading: 'Current role',
-    title: 'Data Engineer & Oracle DBA',
+    title: 'Engineer, Business Line Data Analytics & AI',
     employer: 'ELCA Informatique SA - Lausanne, Switzerland',
     period: '03.2023 – present',
-    body: 'Swiss IT consulting firm. I deliver data platform and database projects for customers in pharma, social insurance and healthcare.',
+    body: 'Swiss IT consulting firm. I work on data platform and database projects for customers in pharmaceuticals, social insurance and healthcare.',
     highlight:
-      'Since 09.2026 I am the technical referent on the pharmaceutical data platform: two developers each own a business domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
+      'Since September 2026 I am the technical lead on the pharmaceutical platform: I review the code of the shared foundation, on which two developers each deliver their own business domain, and I run the workshops with the business.',
   },
 
   skills: {
     heading: 'Skills',
-    note: 'Ordered by how often I actually use them. Only the exceptions are labelled.',
+    note: 'Ordered by how often I use them.',
     levels: { daily: 'Every day', solid: 'Solid', working: 'Working knowledge' },
     items: [
       {
@@ -130,19 +121,8 @@ const en = {
         icon: '/docker.svg',
         title: 'Also in the toolbox',
         level: 'working',
-        body: 'Dagster, Docker, FastAPI, MongoDB, React and Vite - the stack this site runs on.',
+        body: 'Dagster, Docker, FastAPI, MongoDB, React and Vite, the stack this site runs on.',
       },
-    ],
-  },
-
-  howIWork: {
-    heading: 'How I work',
-    items: [
-      'Logic lives in a package, not in a notebook. If it matters, it is importable and unit-tested.',
-      'CI gates are hard. A lint error or a failing test fails the build, and the shared foundation always needs a second reviewer.',
-      'Conventions get written down. A rule that only lives in someone’s head is not a rule.',
-      'Infrastructure is code, and private by default - deny first, then open exactly what is needed.',
-      'I use AI coding assistants (Claude Code) every day, for refactors, tests and documentation. It raised my throughput; it did not replace the review.',
     ],
   },
 
@@ -212,7 +192,7 @@ const en = {
   projects: {
     heading: 'Projects',
     intro:
-      'Client work, so the code is private and the customers are not named. What follows is what I actually built, and what it changed.',
+      'Client work, so the code is private and the customers are not named. Here is what I built, and what came of it.',
     labels: {
       outcome: 'Outcome',
       stack: 'Stack',
@@ -221,11 +201,11 @@ const en = {
       {
         id: 'pharma-lakehouse',
         title: 'Azure lakehouse for a pharmaceutical group',
-        role: 'Data Platform Engineer - technical referent since 09.2026',
-        sector: 'Pharma · Switzerland',
+        role: 'Data Platform Engineer, technical lead since 09.2026',
+        sector: 'Pharmaceuticals · Switzerland',
         period: '02.2026 – present',
         outcome:
-          'Took a Swiss pharmaceutical group from an empty Azure subscription to a production lakehouse feeding Power BI, building all four layers (infrastructure, ingestion, ETL and CI/CD), then turned it into a codebase two new developers could pick up.',
+          'The group went from an empty Azure subscription to a production lakehouse feeding Power BI. I built its four layers: infrastructure, ingestion, ETL and CI/CD.',
         sections: [
           {
             title: 'Context',
@@ -239,12 +219,12 @@ const en = {
               'A medallion lakehouse on Databricks and Unity Catalog: bronze through Auto Loader and Delta Live Tables, silver through Delta MERGE with SCD1/SCD2 and hash-based change detection driven by a watermark table, gold with conformed dimensions shared by every domain plus per-domain fact tables.',
               'Two business domains in production: finance, including the nine-step cost-rate resolution cascade behind the monthly gross margin, and marketing campaign targeting.',
               'CI/CD on Azure DevOps with self-hosted VMSS agents inside the network and OIDC federation instead of stored secrets - separate pipelines for Terraform, Data Factory artifacts and Databricks Asset Bundles.',
-              'Then made it maintainable: the logic moved out of the notebooks into a tested Python package, with quality gates in CI and a second reviewer required on the shared core.',
+              'Then the maintainability work: the logic moved out of the notebooks into a tested Python package, quality gates in CI, and a second reviewer required on the shared core.',
             ],
           },
           {
             title: 'Leading the work',
-            body: 'Since September 2026 I am the technical referent on the platform: two developers each own a business domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
+            body: 'Since September 2026 I am the technical lead on the platform: two developers each own a business domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
           },
         ],
         stack: [
@@ -268,11 +248,11 @@ const en = {
         sector: 'Shared internal platform · client onboarding',
         period: '06.2026 – present',
         outcome:
-          'Onboarded a client onto the group’s shared Terraform data platform, built the cross-tenant bridge it needed, and fed the friction back upstream as merged code and documented tickets.',
+          'I onboarded a client onto the group’s shared Terraform data platform and built the cross-tenant bridge the setup required. I also raised what did not work: two contributions merged, fifteen improvements documented.',
         sections: [
           {
             title: 'Context',
-            body: 'The group runs a Data Platform as a Service: a generic Terraform engine, versioned and pinned, that every client instance consumes remotely. Onboarding a client means deploying an instance and, where it does not fit, improving the engine rather than patching the client.',
+            body: 'The group runs a Data Platform as a Service: a generic Terraform engine, versioned and pinned, that every client instance consumes remotely. Onboarding a client means deploying an instance. Where it did not fit, I fixed the engine rather than the client instance.',
           },
           {
             title: 'What I did',
@@ -304,7 +284,7 @@ const en = {
         sector: 'Swiss social insurance, first pillar',
         period: '12.2023 – present',
         outcome:
-          'Replaced an SSIS and stored-procedure ETL with dbt, inside a shared library of over a thousand models that each compensation fund imports as a versioned package.',
+          'With one colleague, I moved an SSIS and stored-procedure ETL to dbt, inside a shared library of over a thousand models that each compensation fund imports as a versioned package.',
         sections: [
           {
             title: 'Context',
@@ -313,15 +293,15 @@ const en = {
           {
             title: 'What I did',
             items: [
-              'I first built part of that legacy chain myself, then migrated the whole layer to dbt on SQL Server with one colleague, end to end.',
+              'I built part of the legacy chain, then migrated it entirely to dbt on SQL Server with one colleague.',
               'I own 5 of the 26 business domains, contributions and tax reporting among them, from the DB2 extract through to the export.',
-              'Regression and integrity tests on every domain, sqlfluff linting on changed files, and the library released as a versioned package so each fund consumes the same tested code.',
+              'I covered every domain with regression and integrity tests, added sqlfluff linting on changed files, and released the library as a versioned package so each fund consumes the same tested code.',
               'The whole thing is orchestrated with Dagster.',
             ],
           },
           {
             title: 'Outcome',
-            body: 'The migration runs in production and the team works in dbt rather than SSIS, which made the transformation layer reviewable, testable and shared across funds instead of rebuilt for each one.',
+            body: 'The migration runs in production. The team works in dbt instead of SSIS.',
           },
         ],
         stack: [
@@ -342,7 +322,7 @@ const en = {
         sector: 'Healthcare · Switzerland',
         period: '10.2023 – 01.2024',
         outcome:
-          'Migrated a healthcare data platform from Kubernetes to Azure serverless containers, dividing the infrastructure bill by roughly ten.',
+          'I migrated a healthcare data platform from Kubernetes to Azure serverless containers, which divided the infrastructure bill by roughly ten.',
         sections: [
           {
             title: 'What I did',
@@ -363,14 +343,14 @@ const en = {
         sector: 'IT services · several customers',
         period: '03.2023 – present',
         outcome:
-          'Operate Oracle databases from 11g to 23c across customer environments, and automated the tablespace monitoring that used to be done by hand.',
+          'I operate Oracle databases from 11g to 23c across customer environments, and I automated the tablespace monitoring that used to be done by hand.',
         sections: [
           {
             title: 'What I do',
             items: [
-              'Deploy Oracle databases from scratch on new servers - Community and Enterprise editions, versions 11g through 23c.',
+              'Deploy Oracle databases from scratch on new servers - Standard Edition 2 and Enterprise, versions 11g through 23c.',
               'Handle incidents and technical tickets through JIRA for the customers running on our databases.',
-              'Wrote the Python tooling that tracks tablespace and disk usage across the fleet, so saturation is caught before it becomes an incident.',
+              'Maintain the Python tooling I wrote to track tablespace and disk usage across the fleet, so saturation is caught before it becomes an incident.',
               'Write and tune PL/SQL stored procedures.',
             ],
           },
@@ -384,7 +364,7 @@ const en = {
         sector: 'Open source',
         period: '2024 – present',
         outcome:
-          'Built and maintained from scratch - bilingual, no third-party JavaScript, a strict Content Security Policy, and continuously deployed on Netlify.',
+          'I build and maintain it: bilingual, no third-party JavaScript, a strict Content Security Policy, and continuous deployment on Netlify.',
         sections: [
           {
             title: 'Notes',

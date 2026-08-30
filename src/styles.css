@@ -225,12 +225,6 @@ p,
   box-shadow: inset 0 -2px 0 var(--accent);
 }
 
-.site-nav .nav-lang {
-  border: 1px solid var(--line-strong);
-  margin-left: var(--s-2);
-  font-size: var(--t-sm);
-}
-
 .site-nav .navbar-toggler {
   border-color: var(--line-strong);
   padding: var(--s-1) var(--s-2);
@@ -351,6 +345,10 @@ p,
    the question. */
 .btn.btn-dark,
 .btn.btn-outline {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -386,6 +384,16 @@ p,
   color: var(--accent-ink);
   background: var(--accent-soft);
   text-decoration: none;
+}
+
+/* Bootstrap sets `.btn:focus-visible { outline: 0 }` and replaces the ring with
+   a box-shadow taken from --bs-btn-focus-box-shadow, which these buttons never
+   define - so the two hero calls to action and the 404 button had no focus
+   indicator at all. Put the site ring back. */
+.btn.btn-dark:focus-visible,
+.btn.btn-outline:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
 }
 
 /* Stats -------------------------------------------------------------------- */
@@ -698,9 +706,6 @@ p,
   width: 30px;
   height: 30px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.55;
-  transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
 .logo--wide {
@@ -757,11 +762,7 @@ p,
     box-shadow: inset 2px 0 0 var(--accent);
   }
 
-  .site-nav .nav-lang {
-    display: inline-block;
-    margin: var(--s-2) 0 0;
   }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -838,4 +839,186 @@ p,
 
 .plain-block__body > p:last-child {
   margin-bottom: 0;
+}
+
+/* Language menu -----------------------------------------------------------
+   A bare "FR" on an English page reads as a label, not as a way out. The menu
+   names both languages, marks the active one, and keeps the globe as the
+   universally understood affordance. */
+.lang {
+  position: relative;
+  display: inline-block;
+}
+
+.lang__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: var(--s-1) var(--s-2);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--body);
+  font: inherit;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang__button:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.lang__globe {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  flex: 0 0 auto;
+}
+
+.lang__caret {
+  width: 10px;
+  height: 10px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
+.lang__button[aria-expanded='true'] .lang__caret {
+  transform: rotate(180deg);
+}
+
+.lang__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 1000;
+  min-width: 10rem;
+  margin: 0;
+  padding: var(--s-1);
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.12);
+}
+
+.lang__item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  border-radius: 5px;
+  color: var(--body);
+  font-size: var(--t-md);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lang__item:hover {
+  background: var(--bg);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lang__item.is-current {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.lang__item-short {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  min-width: 1.9rem;
+  text-align: center;
+}
+
+.lang__item.is-current .lang__item-short {
+  color: var(--accent-ink);
+  border-color: #ffd9a8;
+  background: var(--accent-soft);
+}
+
+@media (max-width: 991px) {
+  .lang {
+    display: block;
+    margin-top: var(--s-2);
+  }
+
+  .lang__menu {
+    right: auto;
+    left: 0;
+  }
+
+  /* Touch targets. Below the navbar breakpoint everything here is hit with a
+     thumb: the toggler was 43x35, the language button 70x24 and each nav link
+     31px tall. 44px is the smallest a thumb reliably lands on. */
+  .site-nav .navbar-toggler {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .site-nav .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .lang__button {
+    min-height: 44px;
+  }
+
+  .lang__item {
+    min-height: 44px;
+  }
+}
+
+/* Le hamburger devient une croix une fois ouvert : sans ca, rien n indique
+   que retaper le bouton referme le menu. */
+.nav-toggle-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Bootstrap remplace l'anneau de focus du toggler par son propre box-shadow
+   bleu. C'etait le dernier controle a echapper a la convention du site. */
+.site-nav .navbar-toggler:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Les liens de contact et du pied de page faisaient 20 a 25px de haut en
+   mobile : lisible, mais serre pour un pouce. */
+@media (max-width: 767px) {
+  .contact-list a,
+  .site-footer a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
+  .contact-list li {
+    margin-bottom: 0;
+  }
 }

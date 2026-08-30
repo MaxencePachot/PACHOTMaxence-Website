@@ -82,22 +82,38 @@ body {
 
 .head__contact {
   margin: 3mm 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 5mm;
   font-size: 8.6pt;
   color: var(--body);
 }
 
-.head__contact span::after {
-  content: '  ·  ';
-  color: var(--line);
-}
-
-.head__contact span:last-child::after {
-  content: '';
-}
-
-.head__contact a {
+.head__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4mm;
   color: var(--body);
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.head__icon {
+  width: 3.4mm;
+  height: 3.4mm;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .head__status {

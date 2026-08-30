@@ -28,6 +28,11 @@ export const LanguageProvider = ({ children }) => {
       path: (key) => ROUTES[key][lang],
       // The same page in the other language; unknown pages fall back to home.
       altPath: page ? ROUTES[page][other] : ROUTES.home[other],
+      // The current page in every language, for the language menu.
+      pathsByLang: {
+        en: page ? ROUTES[page].en : ROUTES.home.en,
+        fr: page ? ROUTES[page].fr : ROUTES.home.fr,
+      },
     };
   }, [pathname]);
 

@@ -43,6 +43,7 @@ const Home = () => {
                   rel="noopener noreferrer"
                 >
                   {t.hero.cv}
+                  <span className="visually-hidden"> {t.nav.newTab}</span>
                 </a>
                 <a className="btn btn-outline" href={`mailto:${t.contact.email}`}>
                   {t.hero.contact}
@@ -51,18 +52,6 @@ const Home = () => {
             </div>
           </div>
         </header>
-
-        {/* Proof points */}
-        <Section id="proof" title={t.proof.heading} note={t.proof.note}>
-          <ul className="stats">
-            {t.proof.items.map((item) => (
-              <li className="stats__item" key={item.label}>
-                <span className="stats__value">{item.value}</span>
-                <span className="stats__label">{item.label}</span>
-              </li>
-            ))}
-          </ul>
-        </Section>
 
         {/* What I do */}
         <Section id="what-i-do" title={t.whatIDo.heading}>
@@ -105,15 +94,6 @@ const Home = () => {
               </article>
             ))}
           </div>
-        </Section>
-
-        {/* How I work */}
-        <Section id="how-i-work" title={t.howIWork.heading}>
-          <ul className="ticks">
-            {t.howIWork.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
         </Section>
 
         {/* Certifications */}
