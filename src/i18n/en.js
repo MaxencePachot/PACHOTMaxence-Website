@@ -4,9 +4,9 @@ const en = {
 
   meta: {
     home: {
-      title: 'Maxence Pachot - Data Platform Engineer',
+      title: 'Maxence Pachot - Data Engineer, Platform & DataOps',
       description:
-        'Data Platform Engineer in Lausanne, Switzerland. I build Azure data platforms end to end: Terraform infrastructure, ingestion, Databricks lakehouse and CI/CD.',
+        'Data Engineer in Lausanne, Switzerland, on platform and DataOps. I build Azure data platforms end to end: Terraform infrastructure, ingestion, Databricks lakehouse and CI/CD.',
     },
     projects: {
       title: 'Projects - Maxence Pachot',
@@ -34,7 +34,7 @@ const en = {
 
   hero: {
     name: 'Maxence PACHOT',
-    role: 'Data Platform Engineer',
+    role: 'Data Engineer · Platform & DataOps',
     stack: 'Azure · Databricks · Terraform · dbt',
     location: 'ELCA Informatique · Lausanne, Switzerland',
     photoAlt: 'Portrait of Maxence Pachot',
