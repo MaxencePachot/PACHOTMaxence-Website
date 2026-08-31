@@ -118,13 +118,13 @@
         <ul>
           <li>
             J’ai déployé la plateforme data Terraform du groupe pour un client du secteur de la
-            santé, sur une souscription Azure neuve : bootstrap réseau à 2 VNets, runners de CI
+            santé, sur une souscription Azure neuve. Bootstrap réseau à 2 VNets, runners de CI
             privés, state derrière un private endpoint.
           </li>
           <li>
             La plateforme ne savait déployer que sur une seule région et dans un seul tenant. J’ai
             développé le multi-région dans le moteur partagé, et monté le pont cross-tenant qu’exige
-            le partage des responsabilités : nous gérons le compute, le client garde son stockage.
+            le partage des responsabilités : nous gérons le compute, le client garde son stockage.
           </li>
           <li>
             Couche de gouvernance Unity Catalog, puis pipeline pilote en dbt sur un SQL warehouse
@@ -243,17 +243,17 @@
           NAT gateway, Log Analytics, service principals Entra ID · <b>Terraform</b> : modules
           réutilisables, state distant, découpage multi-environnements, tflint, pre-commit · <b>Databricks</b> : Unity Catalog, Delta Lake, Delta Live Tables,
           Auto Loader, Asset Bundles, SQL Warehouses, architecture médaillon, merge SCD1/SCD2 ·
-          <b>dbt</b> · <b>CI/CD</b> : Azure DevOps, GitHub Actions, runners auto-hébergés en réseau
+          <b>dbt</b>, sur Databricks comme sur SQL Server · <b>SQL Server</b> : T-SQL,
+          procédures stockées, linked server · <b>CI/CD</b> : Azure DevOps, GitHub Actions, runners auto-hébergés en réseau
           privé, OIDC et workload identity federation, branch policies · <b>Python</b> (PySpark,
-          pytest, ruff), <b>SQL</b>, T-SQL, PL/SQL, Bash · développement assisté par IA avec Claude
-          Code
+          pytest, ruff), <b>SQL</b>, Bash · développement assisté par IA avec Claude Code
         </div>
       </div>
       <div class="skill-row">
         <div class="skill-row__label"><span class="level level--solid">Solide</span></div>
         <div class="skill-row__value">
           Administration <b>Oracle 11g–23c</b> : déploiement, tuning de performance, PL/SQL,
-          supervision · <b>SQL Server</b> et dbt sur SQL Server · Bicep · Linux
+          supervision · Bicep · Linux
         </div>
       </div>
       <div class="skill-row">

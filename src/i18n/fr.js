@@ -100,6 +100,12 @@ const fr = {
         body: 'Databricks : Unity Catalog, Delta Lake, Delta Live Tables, Auto Loader, Asset Bundles, SQL Warehouses. Architecture médaillon, merge SCD1/SCD2. dbt, sur Databricks comme sur SQL Server.',
       },
       {
+        icon: '/sql-server.svg',
+        title: 'SQL Server',
+        level: 'daily',
+        body: 'SQL Server et T-SQL depuis 2023 : procédures stockées, extraction DB2 via linked server, schémas multi-développeurs sur une même base.',
+      },
+      {
         icon: '/azuredevops.svg',
         title: 'CI/CD & DataOps',
         level: 'daily',
@@ -109,13 +115,13 @@ const fr = {
         icon: '/python.svg',
         title: 'Langages',
         level: 'daily',
-        body: 'Python (PySpark, pytest, ruff), SQL, T-SQL, PL/SQL, Bash. Développement assisté par IA avec Claude Code.',
+        body: 'Python (PySpark, pytest, ruff), SQL, Bash. Développement assisté par IA avec Claude Code.',
       },
       {
         icon: '/oracle.svg',
-        title: 'Bases de données',
+        title: 'Administration Oracle',
         level: 'solid',
-        body: 'Administration Oracle 11g à 23c : déploiement, tuning de performance, PL/SQL, supervision. SQL Server et T-SQL.',
+        body: 'Oracle 11g à 23c : déploiement, tuning de performance, PL/SQL, supervision.',
       },
       {
         icon: '/docker.svg',
@@ -247,19 +253,19 @@ const fr = {
         sector: 'Santé · Suisse',
         period: '06.2026 – aujourd’hui',
         outcome:
-          'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré son premier pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
+          'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré son premier pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
         sections: [
           {
             title: 'Contexte',
-            body: 'Le groupe exploite une Data Platform as a Service : un moteur Terraform générique, versionné, que chaque instance client consomme à distance. Ce client imposait deux contraintes que la plateforme ne couvrait pas. Un déploiement sur plusieurs régions. Et un partage des responsabilités où nous gérons le compute quand le client garde son stockage, donc deux tenants Azure distincts.',
+            body: 'Le groupe exploite une Data Platform as a Service : un moteur Terraform générique, versionné, que chaque instance client consomme à distance. Ce client imposait deux contraintes que la plateforme ne couvrait pas. Un déploiement sur plusieurs régions. Et un partage des responsabilités où nous gérons le compute quand le client garde son stockage, donc deux tenants Azure distincts.',
           },
           {
             title: 'Ce que j’ai fait',
             items: [
-              'Déploiement complet de l’instance client sur une souscription Azure neuve : bootstrap réseau à 2 VNets, runners de CI privés, state Terraform derrière un private endpoint.',
+              'Déploiement complet de l’instance client sur une souscription Azure neuve : bootstrap réseau à 2 VNets, runners de CI privés, state Terraform derrière un private endpoint.',
               'Développement du multi-région dans le moteur partagé, qui ne savait déployer que sur une seule région. C’est une capacité de la plateforme, pas un contournement côté client.',
-              'Mise en place du pont cross-tenant, de bout en bout : identité par service principal, peering de VNets, routage à travers le firewall du hub, forwarding DNS privé. Le compute reste chez nous, le stockage chez le client.',
-              'Couche de gouvernance Unity Catalog : service principals, groupes, catalogs, storage credentials, external locations, grants et secret scopes.',
+              'Mise en place du pont cross-tenant, de bout en bout : identité par service principal, peering de VNets, routage à travers le firewall du hub, forwarding DNS privé. Le compute reste chez nous, le stockage chez le client.',
+              'Couche de gouvernance Unity Catalog : service principals, groupes, catalogs, storage credentials, external locations, grants et secret scopes.',
               'Pipeline pilote en dbt sur un SQL warehouse Databricks, packagé en Databricks Asset Bundle, déployé et exécuté par des pipelines Azure DevOps que j’ai créés.',
             ],
           },

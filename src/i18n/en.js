@@ -100,6 +100,12 @@ const en = {
         body: 'Databricks - Unity Catalog, Delta Lake, Delta Live Tables, Auto Loader, Asset Bundles, SQL Warehouses. Medallion architecture, SCD1/SCD2 merge. dbt, on Databricks and on SQL Server.',
       },
       {
+        icon: '/sql-server.svg',
+        title: 'SQL Server',
+        level: 'daily',
+        body: 'SQL Server and T-SQL since 2023: stored procedures, DB2 extraction through a linked server, multi-developer schemas on a shared instance.',
+      },
+      {
         icon: '/azuredevops.svg',
         title: 'CI/CD & DataOps',
         level: 'daily',
@@ -109,13 +115,13 @@ const en = {
         icon: '/python.svg',
         title: 'Languages',
         level: 'daily',
-        body: 'Python (PySpark, pytest, ruff), SQL, T-SQL, PL/SQL, Bash. AI-assisted development with Claude Code.',
+        body: 'Python (PySpark, pytest, ruff), SQL, Bash. AI-assisted development with Claude Code.',
       },
       {
         icon: '/oracle.svg',
-        title: 'Databases',
+        title: 'Oracle administration',
         level: 'solid',
-        body: 'Oracle 11g to 23c administration - deployment, performance tuning, PL/SQL, monitoring. SQL Server and T-SQL.',
+        body: 'Oracle 11g to 23c: deployment, performance tuning, PL/SQL, monitoring.',
       },
       {
         icon: '/docker.svg',
