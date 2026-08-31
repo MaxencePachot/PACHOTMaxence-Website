@@ -216,7 +216,7 @@ const en = {
             items: [
               'A full Azure landing zone in Terraform - 10 reusable modules, Hub & Spoke topology, every resource behind a private endpoint with public access denied, NAT gateway, private DNS zones and centralised Log Analytics.',
               'Ingestion with Azure Data Factory: a self-hosted integration runtime on the on-premises SQL Server driven by Change Tracking, and parameterised pipelines writing full and delta loads to ADLS Gen2 as parquet.',
-              'A medallion lakehouse on Databricks and Unity Catalog: bronze through Auto Loader and Delta Live Tables, silver through Delta MERGE with SCD1/SCD2 and hash-based change detection driven by a watermark table, gold with conformed dimensions shared by every domain plus per-domain fact tables.',
+              'A medallion lakehouse on Databricks and Unity Catalog: bronze through Auto Loader and Delta Live Tables, silver through Delta MERGE with SCD1/SCD2. Change detection by hash, driven by a watermark table. In gold, conformed dimensions shared by every domain and per-domain fact tables.',
               'Two business domains in production: finance, including the nine-step cost-rate resolution cascade behind the monthly gross margin, and marketing campaign targeting.',
               'CI/CD on Azure DevOps with self-hosted VMSS agents inside the network and OIDC federation instead of stored secrets - separate pipelines for Terraform, Data Factory artifacts and Databricks Asset Bundles.',
               'Then the maintainability work: the logic moved out of the notebooks into a tested Python package, quality gates in CI, and a second reviewer required on the shared core.',
@@ -283,41 +283,31 @@ const en = {
       },
       {
         id: 'social-insurance-dbt',
-        title: 'Migrating a social insurance data platform to dbt',
+        title: 'DB2 to SQL Server migration for Swiss social insurance',
         role: 'Data Engineer',
         sector: 'Swiss social insurance, first pillar',
         period: '12.2023 – present',
         outcome:
-          'With one colleague, I moved an SSIS and stored-procedure ETL to dbt, inside a shared library of over a thousand models that each compensation fund imports as a versioned package.',
+          'Compensation funds are moving off a legacy DB2 system onto SQL Server. I built part of the migration chain in SSIS and stored procedures, before rebuilding the whole of it in dbt with one colleague.',
         sections: [
           {
             title: 'Context',
-            body: 'Swiss first-pillar compensation funds, public and professional, moving off a legacy administration system. The transformation layer was SSIS packages, stored procedures and post-deployment scripts: hard to test, hard to review, and duplicated per fund.',
+            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built the migration chain with SSIS packages, stored procedures and post-deployment scripts: hard to test, hard to review, and duplicated for every fund.',
           },
           {
             title: 'What I did',
             items: [
-              'I built part of the legacy chain, then migrated it entirely to dbt on SQL Server with one colleague.',
               'I own 5 of the 26 business domains, contributions and tax reporting among them, from the DB2 extract through to the export.',
-              'I covered every domain with regression and integrity tests, added sqlfluff linting on changed files, and released the library as a versioned package so each fund consumes the same tested code.',
-              'The whole thing is orchestrated with Dagster.',
+              'Each of those domains is covered by regression and integrity tests, and sqlfluff linting runs on changed files.',
+              'I modelled the staging and target layers. The whole thing is orchestrated with Dagster.',
             ],
           },
           {
             title: 'Outcome',
-            body: 'The migration runs in production. The team works in dbt instead of SSIS.',
+            body: 'The dbt chain runs in production. It is part of a shared library of over a thousand models, released as a versioned package that each fund imports, instead of an ETL rebuilt for each one. The migration carries on.',
           },
         ],
-        stack: [
-          'dbt',
-          'SQL Server',
-          'T-SQL',
-          'DB2',
-          'Dagster',
-          'sqlfluff',
-          'GitHub Actions',
-          'Data modelling',
-        ],
+        stack: ['dbt', 'SQL Server', 'T-SQL', 'DB2', 'Dagster', 'sqlfluff', 'Data modelling', 'Git'],
       },
       {
         id: 'cost-refactor',

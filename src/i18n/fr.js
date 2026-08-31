@@ -282,29 +282,28 @@ const fr = {
       },
       {
         id: 'social-insurance-dbt',
-        title: 'Migration vers dbt d’une plateforme de données d’assurance sociale',
+        title: 'Migration DB2 vers SQL Server pour l’assurance sociale suisse',
         role: 'Data Engineer',
         sector: 'Assurance sociale suisse, 1er pilier',
         period: '12.2023 – aujourd’hui',
         outcome:
-          'Avec un collègue, j’ai migré un ETL SSIS et ses procédures stockées vers dbt, au sein d’une bibliothèque partagée de plus d’un millier de modèles que chaque caisse de compensation importe comme paquet versionné.',
+          'Des caisses de compensation quittent un système historique sur DB2 pour SQL Server. J’ai développé une partie de la chaîne de migration en SSIS et procédures stockées, avant de reconstruire l’ensemble en dbt avec un collègue.',
         sections: [
           {
             title: 'Contexte',
-            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, quittent un système de gestion historique. La couche de transformation était faite de packages SSIS, de procédures stockées et de scripts de post-déploiement : difficile à tester, difficile à relire, et dupliquée par caisse.',
+            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti la chaîne de migration en packages SSIS, procédures stockées et scripts de post-déploiement : difficile à tester, difficile à relire, et dupliquée pour chaque caisse.',
           },
           {
             title: 'Ce que j’ai fait',
             items: [
-              'J’ai développé une partie de la chaîne historique, avant de la migrer entièrement vers dbt sur SQL Server avec un collègue.',
               'Je porte 5 des 26 domaines métier, dont les cotisations et les communications fiscales, de l’extraction DB2 jusqu’à l’export.',
-              'J’ai couvert chaque domaine de tests de régression et d’intégrité, mis en place le linting sqlfluff sur les fichiers modifiés, et publié la bibliothèque en paquet versionné pour que chaque caisse consomme le même code testé.',
-              'L’ensemble est orchestré avec Dagster.',
+              'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et le linting sqlfluff tourne sur les fichiers modifiés.',
+              'J’ai modélisé les couches staging et cible. L’ensemble est orchestré avec Dagster.',
             ],
           },
           {
             title: 'Résultat',
-            body: 'La migration tourne en production. L’équipe travaille en dbt au lieu de SSIS.',
+            body: 'La chaîne dbt tourne en production. Elle fait partie d’une bibliothèque partagée de plus d’un millier de modèles, publiée en paquet versionné que chaque caisse importe, au lieu d’un ETL reconstruit pour chacune. La migration se poursuit.',
           },
         ],
         stack: [
@@ -314,8 +313,8 @@ const fr = {
           'DB2',
           'Dagster',
           'sqlfluff',
-          'GitHub Actions',
           'Modélisation de données',
+          'Git',
         ],
       },
       {

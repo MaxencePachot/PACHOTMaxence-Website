@@ -141,30 +141,30 @@
       <div class="mission">
         <div class="mission__line">
           <h4 class="mission__title">
-            Migration vers dbt d’une plateforme de données d’assurance sociale
+            Migration DB2 vers SQL Server pour l’assurance sociale suisse
           </h4>
           <span class="mission__dates">12.2023 – aujourd’hui</span>
         </div>
         <p class="mission__role">Data Engineer</p>
         <ul>
           <li>
-            J’ai développé une partie de la chaîne historique, packages SSIS et procédures
-            stockées, avant de migrer l’ensemble vers dbt sur SQL Server avec un collègue. Elle
-            tourne aujourd’hui en production.
+            Des caisses de compensation quittent un système historique sur DB2 pour SQL Server.
+            J’ai développé une partie de la chaîne de migration en SSIS et procédures stockées,
+            avant de reconstruire l’ensemble en dbt avec un collègue.
           </li>
           <li>
-            Cette chaîne vit désormais au sein d’une bibliothèque dbt partagée de plus d’un millier de modèles, publiée
-            en paquet versionné que chaque caisse de compensation importe, au lieu d’un ETL
-            reconstruit par caisse.
+            Cette chaîne fait désormais partie d’une bibliothèque dbt partagée de plus d’un millier
+            de modèles, publiée en paquet versionné que chaque caisse importe, au lieu d’un ETL
+            reconstruit pour chacune. Elle tourne en production, et la migration se poursuit.
           </li>
           <li>
-            Je porte 5 de ses 26 domaines métier, dont les cotisations et les communications
+            Je porte 5 des 26 domaines métier, dont les cotisations et les communications
             fiscales, de l’extraction DB2 jusqu’à l’export, avec tests de régression et d’intégrité
             sur chacun.
           </li>
           <li>
             J’ai modélisé les couches staging et cible, mis en place le linting sqlfluff sur les
-            fichiers modifiés, et recueilli les besoins métier auprès des parties prenantes.
+            fichiers modifiés, et recueilli les besoins auprès du métier.
             L’ensemble est orchestré avec Dagster.
           </li>
         </ul>
