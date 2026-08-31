@@ -297,7 +297,7 @@ const fr = {
             title: 'Ce que j’ai fait',
             items: [
               'Avec un collègue, j’ai reconstruit cette chaîne de bout en bout en dbt sur SQL Server.',
-              'Je porte 5 des 26 domaines métier, dont les cotisations, les communications fiscales, la facturation et la comptabilité auxiliaire, de l’extraction DB2 jusqu’à l’export.',
+              'Je porte 5 des 26 domaines métier (cotisations, communications fiscales, facturation, comptabilité auxiliaire, redistribution de la taxe CO2), de l’extraction DB2 jusqu’à l’export.',
               'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et j’ai mis en place le linting sqlfluff sur les fichiers modifiés.',
               'J’ai recueilli et documenté les besoins auprès du métier.',
             ],
