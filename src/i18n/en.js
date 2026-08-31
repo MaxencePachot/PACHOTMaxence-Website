@@ -298,7 +298,7 @@ const en = {
             title: 'What I did',
             items: [
               'With one colleague, I rebuilt that chain end to end in dbt on SQL Server.',
-              'I own 5 of the 26 business domains, contributions and tax reporting among them, from the DB2 extract through to the export.',
+              'I own 5 of the 26 business domains (contributions, tax reporting, billing, subledger accounting), from the DB2 extract through to the export.',
               'Each of those domains is covered by regression and integrity tests, and I set up the sqlfluff linting on changed files.',
               'I gathered and documented the business requirements with the stakeholders.',
             ],
