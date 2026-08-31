@@ -71,7 +71,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -1020,5 +1019,207 @@ p,
 
   .contact-list li {
     margin-bottom: 0;
+  }
+}
+
+
+/* Projects list -----------------------------------------------------------
+   A list that opens in place, not an index followed by six cards saying the
+   same thing twice. Closed, the page is one screen and the six projects read
+   as a summary; open, a project shows everything it has.
+
+   No card chrome here on purpose: hairlines and space do the work, which is
+   what separates a page that looks composed from a page that looks generated. */
+.pj-list {
+  border-top: 1px solid var(--line);
+}
+
+.pj {
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 5rem;
+}
+
+.pj__heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.pj__button {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  width: 100%;
+  padding: var(--s-5) var(--s-2);
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pj__button:hover .pj__title {
+  color: var(--accent-ink);
+}
+
+.pj__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pj__title {
+  display: block;
+  font-size: var(--t-lg);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: var(--lh-tight);
+  transition: color 0.15s ease;
+}
+
+.pj__meta {
+  display: block;
+  margin-top: var(--s-2);
+  font-size: var(--t-md);
+  color: var(--muted);
+}
+
+.pj__sep {
+  margin: 0 var(--s-2);
+  color: var(--line-strong);
+}
+
+.pj__period {
+  flex: 0 0 auto;
+  font-size: var(--t-sm);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* A plus that becomes a minus: the clearest possible statement of "this
+   opens", and it needs no text. */
+.pj__mark {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--accent-ink);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.pj__mark svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.pj__mark-bar {
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.pj.is-open .pj__mark {
+  background: var(--accent-soft);
+  border-color: #ffd9a8;
+}
+
+.pj.is-open .pj__mark-bar {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.pj__button:hover .pj__mark {
+  border-color: var(--accent);
+}
+
+/* Height animation without measuring anything in JavaScript: the row goes
+   from 0fr to 1fr and the browser interpolates. */
+.pj__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.pj.is-open .pj__panel {
+  grid-template-rows: 1fr;
+}
+
+/* overflow: hidden clips a closed panel to the eye, but leaves its text in
+   the accessibility tree: a screen reader still walks the headings and reads
+   the body of all six projects while aria-expanded says false. visibility
+   takes it out of that tree, and out of the tab order the day a link is added
+   inside a panel. The delay keeps it on screen for the length of the closing
+   animation. */
+.pj__panel-clip {
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear 0.28s;
+}
+
+.pj.is-open .pj__panel-clip {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.pj__body {
+  padding: 0 var(--s-2) var(--s-6);
+  max-width: var(--measure);
+}
+
+.pj__outcome {
+  margin: 0 0 var(--s-5);
+  padding-left: var(--s-4);
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+}
+
+.pj__section {
+  margin-top: var(--s-5);
+}
+
+.pj__section:first-of-type {
+  margin-top: 0;
+}
+
+.pj__section-title {
+  margin: 0 0 var(--s-2);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.pj__section p {
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .pj__button {
+    flex-wrap: wrap;
+    padding: var(--s-4) var(--s-1);
+    gap: var(--s-2) var(--s-3);
+  }
+
+  .pj__text {
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  .pj__period {
+    order: 2;
+  }
+
+  .pj__mark {
+    order: 3;
+    margin-left: auto;
   }
 }

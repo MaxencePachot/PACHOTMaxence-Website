@@ -1,5 +1,5 @@
-// Technology logos per project. Kept out of the content files so the two
-// languages never drift apart on something that carries no words.
+// Per-project configuration that carries no words, kept out of the content
+// files so the two languages cannot drift apart on it.
 const T = (src, alt, variant) => ({ src, alt, variant });
 
 export const PROJECT_LOGOS = {

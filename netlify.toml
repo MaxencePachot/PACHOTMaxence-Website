@@ -36,7 +36,10 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+# Le CV change. Un cache long fait servir un ancien PDF pendant des heures
+# apres un deploiement, sans que rien ne l indique. On revalide a chaque fois :
+# le fichier fait 100 Ko, la requete conditionnelle ne coute rien.
 [[headers]]
   for = "/*.pdf"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
