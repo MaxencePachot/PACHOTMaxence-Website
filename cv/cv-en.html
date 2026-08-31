@@ -108,30 +108,30 @@
 
       <div class="mission">
         <div class="mission__line">
-          <h4 class="mission__title">Data Platform as a Service - multi-client Azure platform</h4>
+          <h4 class="mission__title">Azure data platform for a healthcare group</h4>
           <span class="mission__dates">06.2026 – present</span>
         </div>
         <p class="mission__role">Platform Engineer / DataOps</p>
         <ul>
           <li>
-            Onboarded a client end to end onto the group's shared Terraform data platform, in a new
-            Azure subscription: network bootstrap, private CI runners, and the cross-tenant identity
-            and network bridge, documented as a runbook.
+            I deployed the group’s Terraform data platform for a healthcare customer, on a brand-new
+            Azure subscription: two-VNet network bootstrap, private CI runners, Terraform state
+            behind a private endpoint.
           </li>
           <li>
-            Built the governance and pipeline layers: Unity Catalog (catalogs, external locations,
-            groups, grants, secret scopes), Databricks Asset Bundles, dbt on a Databricks SQL
-            warehouse, and promotion from development to production.
+            The platform could only deploy to a single region and a single tenant. I built
+            multi-region support into the shared engine, and the cross-tenant bridge the split of
+            responsibilities requires: we run the compute, the customer keeps its own storage.
           </li>
           <li>
-            Contributed features and fixes back into the shared engine, and raised the friction found
-            during the onboarding with the platform team, each documented with its root cause and a
-            proposed fix.
+            The Unity Catalog governance layer, then a pilot dbt pipeline on a Databricks SQL
+            warehouse, packaged as a Databricks Asset Bundle and run by Azure DevOps pipelines I
+            built. The platform runs in production.
           </li>
         </ul>
         <p class="mission__stack">
-          Terraform · Azure · Databricks · Unity Catalog · dbt · Databricks Asset Bundles · GitHub
-          Actions · Bicep · Bash
+          Terraform · Azure · Databricks · Unity Catalog · dbt · Databricks Asset Bundles · Azure
+          DevOps · Bicep · Bash
         </p>
       </div>
 

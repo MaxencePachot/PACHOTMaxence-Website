@@ -1223,3 +1223,24 @@ p,
     margin-left: auto;
   }
 }
+
+/* A l'impression, un accordeon replie ne donnerait qu'un projet sur six. On
+   deplie tout : sur papier il n'y a personne pour cliquer. */
+@media print {
+  .pj__panel {
+    grid-template-rows: 1fr;
+  }
+
+  .pj__panel-clip {
+    visibility: visible;
+  }
+
+  .pj__mark {
+    display: none;
+  }
+
+  .pj {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

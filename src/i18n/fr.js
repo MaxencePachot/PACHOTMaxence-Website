@@ -242,26 +242,30 @@ const fr = {
       },
       {
         id: 'dpaas',
-        title: 'Data Platform as a Service : plateforme Azure multi-clients',
+        title: 'Plateforme data Azure pour un groupe de santé',
         role: 'Platform Engineer / DataOps',
-        sector: 'Plateforme interne partagée · onboarding client',
+        sector: 'Santé · Suisse',
         period: '06.2026 – aujourd’hui',
         outcome:
-          'J’ai intégré un client à la plateforme data Terraform partagée du groupe et construit le pont cross-tenant que cette intégration exigeait. J’ai aussi remonté ce qui coinçait : deux contributions mergées, 15 améliorations documentées.',
+          'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré sa première pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
         sections: [
           {
             title: 'Contexte',
-            body: 'Le groupe exploite une Data Platform as a Service : un moteur Terraform générique, versionné et épinglé, que chaque instance client consomme à distance. Intégrer un client, c’est déployer une instance. Quand elle n’a pas suffi, j’ai corrigé le moteur plutôt que l’instance.',
+            body: 'Le groupe exploite une Data Platform as a Service : un moteur Terraform générique, versionné, que chaque instance client consomme à distance. Ce client imposait deux contraintes que la plateforme ne couvrait pas. Un déploiement sur plusieurs régions. Et un partage des responsabilités où nous gérons le compute quand le client garde son stockage, donc deux tenants Azure distincts.',
           },
           {
             title: 'Ce que j’ai fait',
             items: [
-              'Onboarding complet d’un client sur une souscription Azure neuve : bootstrap de la topologie à 2 VNets, runners GitHub Actions privés, stockage du state Terraform derrière un private endpoint, puis l’instance client elle-même.',
-              'Construction du pont cross-tenant : identité via un service principal, réseau via peering de VNets, routage défini par l’utilisateur à travers le firewall du hub et forwarding DNS privé. Rédaction du runbook correspondant, pièges Unity Catalog compris.',
-              'Déploiement de la couche Unity Catalog : service principals, groupes, catalogs, storage credentials, external locations, grants et secret scopes.',
-              'Construction de la couche pipeline : Databricks Asset Bundles, dbt sur un SQL warehouse Databricks (macro de génération de schéma, matérialisation par couche, tests dbt), pipelines d’ingestion Lakeflow, et promotion de dev vers intégration puis production.',
-              'Contribution en retour au moteur partagé : deux pull requests mergées (prise en charge d’une topologie à 2 VNets, et un correctif de normalisation), plus 15 améliorations remontées à l’équipe plateforme, chacune avec l’observation, la cause racine et un correctif proposé. Quatre font l’objet d’une issue.',
+              'Déploiement complet de l’instance client sur une souscription Azure neuve : bootstrap réseau à 2 VNets, runners de CI privés, state Terraform derrière un private endpoint.',
+              'Développement du multi-région dans le moteur partagé, qui ne savait déployer que sur une seule région. C’est une capacité de la plateforme, pas un contournement côté client.',
+              'Mise en place du pont cross-tenant, de bout en bout : identité par service principal, peering de VNets, routage à travers le firewall du hub, forwarding DNS privé. Le compute reste chez nous, le stockage chez le client.',
+              'Couche de gouvernance Unity Catalog : service principals, groupes, catalogs, storage credentials, external locations, grants et secret scopes.',
+              'Pipeline pilote en dbt sur un SQL warehouse Databricks, packagée en Databricks Asset Bundle, déployée et exécutée par des pipelines Azure DevOps que j’ai créés.',
             ],
+          },
+          {
+            title: 'Résultat',
+            body: 'La plateforme tourne en production chez le client.',
           },
         ],
         stack: [
@@ -271,7 +275,7 @@ const fr = {
           'Unity Catalog',
           'dbt',
           'Databricks Asset Bundles',
-          'GitHub Actions',
+          'Azure DevOps',
           'Bicep',
           'Bash',
         ],

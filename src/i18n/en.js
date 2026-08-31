@@ -243,26 +243,30 @@ const en = {
       },
       {
         id: 'dpaas',
-        title: 'Data Platform as a Service - multi-client Azure platform',
+        title: 'Azure data platform for a healthcare group',
         role: 'Platform Engineer / DataOps',
-        sector: 'Shared internal platform · client onboarding',
+        sector: 'Healthcare · Switzerland',
         period: '06.2026 – present',
         outcome:
-          'I onboarded a client onto the group’s shared Terraform data platform and built the cross-tenant bridge the setup required. I also raised what did not work: two contributions merged, fifteen improvements documented.',
+          'I deployed the group’s data platform for a healthcare customer and shipped its first pipeline to production. The platform could do neither multi-region nor cross-tenant: I built both.',
         sections: [
           {
             title: 'Context',
-            body: 'The group runs a Data Platform as a Service: a generic Terraform engine, versioned and pinned, that every client instance consumes remotely. Onboarding a client means deploying an instance. Where it did not fit, I fixed the engine rather than the client instance.',
+            body: 'The group runs a Data Platform as a Service: a generic, versioned Terraform engine that every client instance consumes remotely. This customer came with two constraints the platform did not cover. A deployment across several regions. And a split of responsibilities where we run the compute while the customer keeps its own storage, so two separate Azure tenants.',
           },
           {
             title: 'What I did',
             items: [
-              'Onboarded a client end to end on a brand-new Azure subscription: bootstrap of the two-VNet topology, private GitHub Actions runners, Terraform state storage behind a private endpoint, then the client instance itself.',
-              'Built the cross-tenant bridge: identity through a service principal, network through VNet peering, user-defined routing via the hub firewall and private DNS forwarding. Wrote it up as a runbook, including the Unity Catalog pitfalls that come with it.',
-              'Deployed the Unity Catalog layer: service principals, groups, catalogs, storage credentials, external locations, grants and secret scopes.',
-              'Built the pipeline layer: Databricks Asset Bundles, dbt on a Databricks SQL warehouse (schema-generation macro, materialisation per layer, dbt tests), Lakeflow ingestion pipelines, and promotion from dev to integration to production.',
-              'Contributed back to the shared engine: two pull requests merged (support for a two-VNet topology, and a normalisation fix), plus 15 platform improvements raised with the platform team, each with the observation, the root cause and a proposed fix. Four are tracked as issues.',
+              'Deployed the client instance end to end on a brand-new Azure subscription: two-VNet network bootstrap, private CI runners, Terraform state behind a private endpoint.',
+              'Built multi-region support into the shared engine, which could only deploy to a single region. That is a platform capability, not a workaround on the client side.',
+              'Built the cross-tenant bridge end to end: service principal identity, VNet peering, routing through the hub firewall, private DNS forwarding. The compute stays with us, the storage with the customer.',
+              'Unity Catalog governance layer: service principals, groups, catalogs, storage credentials, external locations, grants and secret scopes.',
+              'A pilot dbt pipeline on a Databricks SQL warehouse, packaged as a Databricks Asset Bundle, deployed and run by Azure DevOps pipelines I built.',
             ],
+          },
+          {
+            title: 'Outcome',
+            body: 'The platform runs in production at the customer.',
           },
         ],
         stack: [
@@ -272,7 +276,7 @@ const en = {
           'Unity Catalog',
           'dbt',
           'Databricks Asset Bundles',
-          'GitHub Actions',
+          'Azure DevOps',
           'Bicep',
           'Bash',
         ],
