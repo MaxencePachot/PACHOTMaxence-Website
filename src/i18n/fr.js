@@ -298,7 +298,7 @@ const fr = {
             items: [
               'Je porte 5 des 26 domaines métier, dont les cotisations et les communications fiscales, de l’extraction DB2 jusqu’à l’export.',
               'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et le linting sqlfluff tourne sur les fichiers modifiés.',
-              'J’ai modélisé les couches staging et cible. L’ensemble est orchestré avec Dagster.',
+              'J’ai recueilli et documenté les besoins auprès du métier.',
             ],
           },
           {

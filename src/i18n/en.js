@@ -299,7 +299,7 @@ const en = {
             items: [
               'I own 5 of the 26 business domains, contributions and tax reporting among them, from the DB2 extract through to the export.',
               'Each of those domains is covered by regression and integrity tests, and sqlfluff linting runs on changed files.',
-              'I modelled the staging and target layers. The whole thing is orchestrated with Dagster.',
+              'I gathered and documented the business requirements with the stakeholders.',
             ],
           },
           {
