@@ -11,7 +11,7 @@ const en = {
     projects: {
       title: 'Projects - Maxence Pachot',
       description:
-        'Azure data platform projects: a pharmaceutical lakehouse, a multi-client Data Platform as a Service, a Swiss social insurance migration to dbt, and Oracle administration.',
+        'Azure data platform projects: a pharmaceutical lakehouse, a data platform for a healthcare group, a DB2 to SQL Server migration for Swiss social insurance, and Oracle administration.',
     },
     notFound: {
       title: 'Page not found - Maxence Pachot',
@@ -91,13 +91,13 @@ const en = {
         icon: '/terraform.svg',
         title: 'Infrastructure as code',
         level: 'daily',
-        body: 'Terraform - reusable modules, remote state, multi-environment layouts, tflint, terraform-docs and pre-commit. Bicep for subscription bootstrap.',
+        body: 'Terraform - reusable modules, remote state, multi-environment layouts, tflint and pre-commit. Bicep for subscription bootstrap.',
       },
       {
         icon: '/databricks.svg',
         title: 'Data & lakehouse',
         level: 'daily',
-        body: 'Databricks - Unity Catalog, Delta Lake, Delta Live Tables and Lakeflow, Auto Loader, Asset Bundles, SQL Warehouses. Medallion architecture, SCD1/SCD2 merge. dbt, on Databricks and on SQL Server.',
+        body: 'Databricks - Unity Catalog, Delta Lake, Delta Live Tables, Auto Loader, Asset Bundles, SQL Warehouses. Medallion architecture, SCD1/SCD2 merge. dbt, on Databricks and on SQL Server.',
       },
       {
         icon: '/azuredevops.svg',
@@ -174,7 +174,7 @@ const en = {
   contact: {
     heading: 'Contact',
     email: 'pachot.maxence@gmail.com',
-    linkedin: 'LinkedIn @MaxencePachot',
+    linkedin: 'LinkedIn pachotmaxence',
     github: 'GitHub @MaxencePachot',
   },
 
@@ -192,9 +192,9 @@ const en = {
   projects: {
     heading: 'Projects',
     intro:
-      'Client work, so the code is private and the customers are not named. Here is what I built, and what came of it.',
+      'Five client engagements, where the code is private and the customers are not named, plus this site. Here is what I built, and what came of it.',
     labels: {
-      outcome: 'Outcome',
+      outcome: 'In short',
       stack: 'Stack',
     },
     items: [
@@ -292,13 +292,14 @@ const en = {
         sections: [
           {
             title: 'Context',
-            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built the migration chain with SSIS packages, stored procedures and post-deployment scripts: hard to test, hard to review, and duplicated for every fund.',
+            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built the migration chain with SSIS packages, stored procedures and post-deployment scripts, one chain per fund.',
           },
           {
             title: 'What I did',
             items: [
+              'With one colleague, I rebuilt that chain end to end in dbt on SQL Server.',
               'I own 5 of the 26 business domains, contributions and tax reporting among them, from the DB2 extract through to the export.',
-              'Each of those domains is covered by regression and integrity tests, and sqlfluff linting runs on changed files.',
+              'Each of those domains is covered by regression and integrity tests, and I set up the sqlfluff linting on changed files.',
               'I gathered and documented the business requirements with the stakeholders.',
             ],
           },
@@ -311,7 +312,7 @@ const en = {
       },
       {
         id: 'cost-refactor',
-        title: 'Cutting infrastructure cost by 10× on a healthcare platform',
+        title: 'Infrastructure cost reduction on a healthcare platform',
         role: 'Data Engineer / DevOps',
         sector: 'Healthcare · Switzerland',
         period: '10.2023 – 01.2024',
@@ -354,8 +355,8 @@ const en = {
       {
         id: 'this-site',
         title: 'This website',
-        role: 'Personal project',
-        sector: 'Open source',
+        role: 'Development and maintenance',
+        sector: 'Personal project',
         period: '2024 – present',
         outcome:
           'I build and maintain it: bilingual, no third-party JavaScript, a strict Content Security Policy, and continuous deployment on Netlify.',

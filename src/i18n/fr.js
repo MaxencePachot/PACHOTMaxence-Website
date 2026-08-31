@@ -11,7 +11,7 @@ const fr = {
     projects: {
       title: 'Projets - Maxence Pachot',
       description:
-        'Projets de plateformes data Azure : lakehouse pharmaceutique, Data Platform as a Service multi-clients, migration vers dbt d’une plateforme d’assurance sociale suisse, administration Oracle.',
+        'Projets de plateformes data Azure : lakehouse pharmaceutique, plateforme data pour un groupe de santé, migration DB2 vers SQL Server pour l’assurance sociale suisse, administration Oracle.',
     },
     notFound: {
       title: 'Page introuvable - Maxence Pachot',
@@ -91,13 +91,13 @@ const fr = {
         icon: '/terraform.svg',
         title: 'Infrastructure as code',
         level: 'daily',
-        body: 'Terraform : modules réutilisables, state distant, découpage multi-environnements, tflint, terraform-docs et pre-commit. Bicep pour le bootstrap de souscription.',
+        body: 'Terraform : modules réutilisables, state distant, découpage multi-environnements, tflint et pre-commit. Bicep pour le bootstrap de souscription.',
       },
       {
         icon: '/databricks.svg',
         title: 'Data & lakehouse',
         level: 'daily',
-        body: 'Databricks : Unity Catalog, Delta Lake, Delta Live Tables et Lakeflow, Auto Loader, Asset Bundles, SQL Warehouses. Architecture médaillon, merge SCD1/SCD2. dbt, sur Databricks comme sur SQL Server.',
+        body: 'Databricks : Unity Catalog, Delta Lake, Delta Live Tables, Auto Loader, Asset Bundles, SQL Warehouses. Architecture médaillon, merge SCD1/SCD2. dbt, sur Databricks comme sur SQL Server.',
       },
       {
         icon: '/azuredevops.svg',
@@ -173,7 +173,7 @@ const fr = {
   contact: {
     heading: 'Contact',
     email: 'pachot.maxence@gmail.com',
-    linkedin: 'LinkedIn @MaxencePachot',
+    linkedin: 'LinkedIn pachotmaxence',
     github: 'GitHub @MaxencePachot',
   },
 
@@ -191,9 +191,9 @@ const fr = {
   projects: {
     heading: 'Projets',
     intro:
-      'Des missions clients : le code est privé et les clients ne sont pas nommés. Voici ce que j’ai construit, et ce que ça a donné.',
+      'Cinq missions clients, où le code est privé et les clients ne sont pas nommés, plus ce site. Voici ce que j’ai construit, et ce que ça a donné.',
     labels: {
-      outcome: 'Résultat',
+      outcome: 'En bref',
       stack: 'Stack',
     },
     items: [
@@ -247,7 +247,7 @@ const fr = {
         sector: 'Santé · Suisse',
         period: '06.2026 – aujourd’hui',
         outcome:
-          'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré sa première pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
+          'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré son premier pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
         sections: [
           {
             title: 'Contexte',
@@ -260,7 +260,7 @@ const fr = {
               'Développement du multi-région dans le moteur partagé, qui ne savait déployer que sur une seule région. C’est une capacité de la plateforme, pas un contournement côté client.',
               'Mise en place du pont cross-tenant, de bout en bout : identité par service principal, peering de VNets, routage à travers le firewall du hub, forwarding DNS privé. Le compute reste chez nous, le stockage chez le client.',
               'Couche de gouvernance Unity Catalog : service principals, groupes, catalogs, storage credentials, external locations, grants et secret scopes.',
-              'Pipeline pilote en dbt sur un SQL warehouse Databricks, packagée en Databricks Asset Bundle, déployée et exécutée par des pipelines Azure DevOps que j’ai créés.',
+              'Pipeline pilote en dbt sur un SQL warehouse Databricks, packagé en Databricks Asset Bundle, déployé et exécuté par des pipelines Azure DevOps que j’ai créés.',
             ],
           },
           {
@@ -291,13 +291,14 @@ const fr = {
         sections: [
           {
             title: 'Contexte',
-            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti la chaîne de migration en packages SSIS, procédures stockées et scripts de post-déploiement : difficile à tester, difficile à relire, et dupliquée pour chaque caisse.',
+            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti la chaîne de migration en packages SSIS, procédures stockées et scripts de post-déploiement, une chaîne par caisse.',
           },
           {
             title: 'Ce que j’ai fait',
             items: [
+              'Avec un collègue, j’ai reconstruit cette chaîne de bout en bout en dbt sur SQL Server.',
               'Je porte 5 des 26 domaines métier, dont les cotisations et les communications fiscales, de l’extraction DB2 jusqu’à l’export.',
-              'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et le linting sqlfluff tourne sur les fichiers modifiés.',
+              'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et j’ai mis en place le linting sqlfluff sur les fichiers modifiés.',
               'J’ai recueilli et documenté les besoins auprès du métier.',
             ],
           },
@@ -319,7 +320,7 @@ const fr = {
       },
       {
         id: 'cost-refactor',
-        title: 'Division par 10 du coût d’infrastructure d’une plateforme santé',
+        title: 'Réduction du coût d’infrastructure d’une plateforme santé',
         role: 'Data Engineer / DevOps',
         sector: 'Santé · Suisse',
         period: '10.2023 – 01.2024',
@@ -362,8 +363,8 @@ const fr = {
       {
         id: 'this-site',
         title: 'Ce site',
-        role: 'Projet personnel',
-        sector: 'Open source',
+        role: 'Développement et maintenance',
+        sector: 'Projet personnel',
         period: '2024 – aujourd’hui',
         outcome:
           'Je le développe et le maintiens : un site bilingue, sans JavaScript tiers, avec une Content Security Policy stricte et un déploiement continu sur Netlify.',

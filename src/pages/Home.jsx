@@ -140,7 +140,7 @@ const Home = () => {
             <li>
               <img src="/linkedin.svg" alt="" width="24" height="24" />
               <a
-                href="https://www.linkedin.com/in/maxence-pachot-6801761b7"
+                href="https://www.linkedin.com/in/pachotmaxence"
                 target="_blank"
                 rel="noopener noreferrer"
               >
