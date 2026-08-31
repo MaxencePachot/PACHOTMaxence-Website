@@ -73,7 +73,7 @@ const fr = {
     period: '03.2023 – aujourd’hui',
     body: 'Société suisse de conseil en informatique. J’interviens sur des projets de plateformes data et de bases de données, pour des clients de l’industrie pharmaceutique, de l’assurance sociale et de la santé.',
     highlight:
-      'Depuis septembre 2026, je suis référent technique de la plateforme pharmaceutique : je revois le code de la fondation partagée, sur laquelle deux développeurs livrent chacun leur domaine métier, et j’anime les ateliers avec les équipes métier.',
+      'Je mène plusieurs missions en parallèle. Référent technique de la plateforme pharmaceutique depuis septembre 2026, je revois le code de la fondation partagée, sur laquelle deux développeurs livrent chacun leur domaine métier, et j’anime les ateliers avec les équipes métier. La migration DB2 vers SQL Server pour l’assurance sociale continue sur la même période, et je maintiens les bases Oracle des environnements clients.',
   },
 
   skills: {

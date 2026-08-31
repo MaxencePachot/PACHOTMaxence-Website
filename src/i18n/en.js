@@ -73,7 +73,7 @@ const en = {
     period: '03.2023 – present',
     body: 'Swiss IT consulting firm. I work on data platform and database projects for customers in pharmaceuticals, social insurance and healthcare.',
     highlight:
-      'Since September 2026 I am the technical lead on the pharmaceutical platform: I review the code of the shared foundation, on which two developers each deliver their own business domain, and I run the workshops with the business.',
+      'I run several engagements in parallel. As technical lead on the pharmaceutical platform since September 2026, I review the code of the shared foundation, on which two developers each deliver their own business domain, and I run the workshops with the business. The DB2 to SQL Server migration for social insurance runs over the same period, and I maintain the Oracle databases on customer environments.',
   },
 
   skills: {
