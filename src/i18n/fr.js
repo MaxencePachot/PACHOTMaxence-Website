@@ -73,7 +73,7 @@ const fr = {
     period: '03.2023 – aujourd’hui',
     body: 'Société suisse de conseil en informatique. J’interviens sur des projets de plateformes data et de bases de données, pour des clients de l’industrie pharmaceutique, de l’assurance sociale et de la santé.',
     highlight:
-      'Je mène plusieurs missions en parallèle. Référent technique de la plateforme pharmaceutique depuis septembre 2026, je revois le code de la fondation partagée, sur laquelle deux développeurs livrent chacun leur domaine métier, et j’anime les ateliers avec les équipes métier. La migration DB2 vers SQL Server pour l’assurance sociale continue sur la même période, et je maintiens les bases Oracle des environnements clients.',
+      'Je mène plusieurs missions en parallèle. Référent technique de la plateforme pharmaceutique depuis septembre 2026, je revois le code de la fondation partagée, sur laquelle deux développeurs livrent chacun leur domaine, et j’anime les ateliers avec les équipes métier. La migration DB2 vers SQL Server pour l’assurance sociale continue sur la même période, et je maintiens les bases Oracle des environnements clients.',
   },
 
   skills: {
@@ -197,7 +197,7 @@ const fr = {
   projects: {
     heading: 'Projets',
     intro:
-      'Cinq missions clients, où le code est privé et les clients ne sont pas nommés, plus ce site. Voici ce que j’ai construit, et ce que ça a donné.',
+      'Cinq missions clients, plus ce site. Le code est privé et les clients ne sont pas nommés. Voici ce que j’ai construit, et ce que ça a donné.',
     labels: {
       outcome: 'En bref',
       stack: 'Stack',
@@ -229,7 +229,7 @@ const fr = {
           },
           {
             title: 'Piloter le travail',
-            body: 'Depuis septembre 2026, je suis référent technique de la plateforme : deux développeurs prennent chacun un domaine métier, je porte la fondation partagée et revois ce qui y entre, et j’anime les ateliers avec le métier. Un architecte data et un product owner cadrent la direction du projet.',
+            body: 'Depuis septembre 2026, je suis référent technique de la plateforme : deux développeurs prennent chacun un domaine, je porte la fondation partagée et revois ce qui y entre, et j’anime les ateliers avec le métier. Un architecte data et un product owner cadrent la direction du projet.',
           },
         ],
         stack: [
@@ -293,16 +293,16 @@ const fr = {
         sector: 'Assurance sociale suisse, 1er pilier',
         period: '12.2023 – aujourd’hui',
         outcome:
-          'Des caisses de compensation quittent un système historique sur DB2 pour SQL Server. J’ai développé une partie de la chaîne de migration en SSIS et procédures stockées, avant de reconstruire l’ensemble en dbt avec un collègue.',
+          'Des caisses de compensation quittent un système historique sur DB2 pour SQL Server. J’ai développé une partie de la chaîne de migration en SSIS et procédures stockées, puis contribué à sa reconstruction complète en dbt.',
         sections: [
           {
             title: 'Contexte',
-            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti la chaîne de migration en packages SSIS, procédures stockées et scripts de post-déploiement, une chaîne par caisse.',
+            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti une chaîne de migration par caisse, en packages SSIS, procédures stockées et scripts de post-déploiement.',
           },
           {
             title: 'Ce que j’ai fait',
             items: [
-              'Avec un collègue, j’ai reconstruit cette chaîne de bout en bout en dbt sur SQL Server.',
+              'Chaque domaine suit la même convention de phases, de la préparation à l’export, et la bibliothèque est publiée sur tag par la CI.',
               'Je porte 5 des 26 domaines métier (cotisations, communications fiscales, facturation, comptabilité auxiliaire, redistribution de la taxe CO2), de l’extraction DB2 jusqu’à l’export.',
               'Chacun de ces domaines est couvert par des tests de régression et d’intégrité, et j’ai mis en place le linting sqlfluff sur les fichiers modifiés.',
               'J’ai recueilli et documenté les besoins auprès du métier.',

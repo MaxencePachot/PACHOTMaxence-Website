@@ -11,7 +11,7 @@ const en = {
     projects: {
       title: 'Projects - Maxence Pachot',
       description:
-        'Azure data platform projects: a pharmaceutical lakehouse, a data platform for a healthcare group, a DB2 to SQL Server migration for Swiss social insurance, and Oracle administration.',
+        'Azure data projects: a pharmaceutical lakehouse, a data platform for a healthcare group, a DB2 to SQL Server migration for Swiss social insurance, and Oracle administration.',
     },
     notFound: {
       title: 'Page not found - Maxence Pachot',
@@ -73,7 +73,7 @@ const en = {
     period: '03.2023 – present',
     body: 'Swiss IT consulting firm. I work on data platform and database projects for customers in pharmaceuticals, social insurance and healthcare.',
     highlight:
-      'I run several engagements in parallel. As technical lead on the pharmaceutical platform since September 2026, I review the code of the shared foundation, on which two developers each deliver their own business domain, and I run the workshops with the business. The DB2 to SQL Server migration for social insurance runs over the same period, and I maintain the Oracle databases on customer environments.',
+      'I run several engagements in parallel. As technical lead on the pharmaceutical platform since September 2026, I review the code of the shared foundation, on which two developers each deliver their own domain, and I run the workshops with the business. The DB2 to SQL Server migration for social insurance runs over the same period, and I maintain the Oracle databases on customer environments.',
   },
 
   skills: {
@@ -230,7 +230,7 @@ const en = {
           },
           {
             title: 'Leading the work',
-            body: 'Since September 2026 I am the technical lead on the platform: two developers each own a business domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
+            body: 'Since September 2026 I am the technical lead on the platform: two developers each own a domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
           },
         ],
         stack: [
@@ -294,16 +294,16 @@ const en = {
         sector: 'Swiss social insurance, first pillar',
         period: '12.2023 – present',
         outcome:
-          'Compensation funds are moving off a legacy DB2 system onto SQL Server. I built part of the migration chain in SSIS and stored procedures, before rebuilding the whole of it in dbt with one colleague.',
+          'Compensation funds are moving off a legacy DB2 system onto SQL Server. I built part of the migration chain in SSIS and stored procedures, then contributed to its full rebuild in dbt.',
         sections: [
           {
             title: 'Context',
-            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built the migration chain with SSIS packages, stored procedures and post-deployment scripts, one chain per fund.',
+            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built one migration chain per fund, with SSIS packages, stored procedures and post-deployment scripts.',
           },
           {
             title: 'What I did',
             items: [
-              'With one colleague, I rebuilt that chain end to end in dbt on SQL Server.',
+              'Every domain follows the same phase convention, from preparation to export, and the library is released on tag by the CI.',
               'I own 5 of the 26 business domains (contributions, tax reporting, billing, subledger accounting, CO2 levy redistribution), from the DB2 extract through to the export.',
               'Each of those domains is covered by regression and integrity tests, and I set up the sqlfluff linting on changed files.',
               'I gathered and documented the business requirements with the stakeholders.',
