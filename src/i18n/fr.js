@@ -5,12 +5,12 @@ const fr = {
   meta: {
     home: {
       title: 'Maxence Pachot - Data Engineer, Platform & DataOps',
-      description:
+      description :
         'Data Engineer à Lausanne, Suisse, sur les volets plateforme et DataOps. Je conçois et maintiens des plateformes data sur Azure : infrastructure Terraform, ingestion, lakehouse Databricks et CI/CD.',
     },
     projects: {
       title: 'Projets - Maxence Pachot',
-      description:
+      description :
         'Projets de plateformes data Azure : lakehouse pharmaceutique, plateforme data pour un groupe de santé, migration DB2 vers SQL Server pour l’assurance sociale suisse, administration Oracle.',
     },
     notFound: {
@@ -39,7 +39,7 @@ const fr = {
     stack: 'Azure · Databricks · Terraform · dbt',
     location: 'ELCA Informatique · Lausanne, Suisse',
     photoAlt: 'Portrait de Maxence Pachot',
-    pitch:
+    pitch :
       'Je conçois et maintiens des plateformes data sur Azure, de l’infrastructure Terraform au lakehouse Databricks, CI/CD comprise. Trois ans et demi de conseil informatique en Suisse : industrie pharmaceutique, assurance sociale, santé.',
     cv: 'Télécharger le CV',
     contact: 'Me contacter',
@@ -72,8 +72,8 @@ const fr = {
     employer: 'ELCA Informatique SA, Lausanne',
     period: '03.2023 – aujourd’hui',
     body: 'Société suisse de conseil en informatique. J’interviens sur des projets de plateformes data et de bases de données, pour des clients de l’industrie pharmaceutique, de l’assurance sociale et de la santé.',
-    highlight:
-      'Je mène plusieurs missions en parallèle. Référent technique de la plateforme pharmaceutique depuis septembre 2026, je revois le code de la fondation partagée, sur laquelle deux développeurs livrent chacun leur domaine, et j’anime les ateliers avec les équipes métier. La migration DB2 vers SQL Server pour l’assurance sociale continue sur la même période, et je maintiens les bases Oracle des environnements clients.',
+    highlight :
+      'Je mène plusieurs missions en parallèle. Référent technique de la plateforme pharmaceutique depuis septembre 2026, je revois le code de la fondation partagée sur laquelle deux développeurs livrent, et j’anime les ateliers avec les équipes métier. La migration DB2 vers SQL Server pour l’assurance sociale continue sur la même période, et je maintiens les bases Oracle des environnements clients.',
   },
 
   skills: {
@@ -196,7 +196,7 @@ const fr = {
 
   projects: {
     heading: 'Projets',
-    intro:
+    intro :
       'Cinq missions clients, plus ce site. Le code est privé et les clients ne sont pas nommés. Voici ce que j’ai construit, et ce que ça a donné.',
     labels: {
       outcome: 'En bref',
@@ -209,7 +209,7 @@ const fr = {
         role: 'Data Platform Engineer, référent technique depuis 09.2026',
         sector: 'Industrie pharmaceutique · Suisse',
         period: '02.2026 – aujourd’hui',
-        outcome:
+        outcome :
           'Le groupe est passé d’une souscription Azure vide à un lakehouse en production qui alimente Power BI. J’en ai construit les quatre couches : infrastructure, ingestion, ETL et CI/CD.',
         sections: [
           {
@@ -222,14 +222,14 @@ const fr = {
               'Une landing zone Azure complète en Terraform : 10 modules réutilisables, topologie Hub & Spoke, chaque ressource derrière un private endpoint avec accès public refusé, NAT gateway, zones DNS privées et Log Analytics centralisé.',
               'L’ingestion avec Azure Data Factory : un integration runtime auto-hébergé sur le SQL Server on-premise, piloté par le Change Tracking, et des pipelines paramétrés écrivant les chargements complets et delta dans ADLS Gen2 en parquet.',
               'Un lakehouse médaillon sur Databricks et Unity Catalog : bronze via Auto Loader et Delta Live Tables, silver via MERGE Delta avec SCD1/SCD2. Détection de changement par hash, pilotée par une table de watermark. En gold, des dimensions conformes partagées par tous les domaines et des tables de faits par domaine.',
-              'Deux domaines métier en production : la finance, dont la marge brute mensuelle repose sur une cascade de neuf étapes pour résoudre les taux de coût, et le ciblage des campagnes marketing.',
+              'Cinq domaines métier au programme : marketing, finance, pilote commercial, achats et prédictif. Deux sont en partie en production, dont la finance et sa cascade de neuf étapes pour résoudre les taux de coût derrière la marge brute mensuelle.',
               'La CI/CD sur Azure DevOps : des agents VMSS auto-hébergés dans le réseau, une fédération OIDC plutôt que des secrets stockés, et des pipelines séparés pour Terraform, les artefacts Data Factory et les Databricks Asset Bundles.',
               'Puis le travail de maintenabilité : la logique sortie des notebooks vers un package Python testé, des tests et du lint qui bloquent la CI, et un second relecteur obligatoire sur le cœur partagé.',
             ],
           },
           {
             title: 'Piloter le travail',
-            body: 'Depuis septembre 2026, je suis référent technique de la plateforme : deux développeurs prennent chacun un domaine, je porte la fondation partagée et revois ce qui y entre, et j’anime les ateliers avec le métier. Un architecte data et un product owner cadrent la direction du projet.',
+            body: 'Depuis septembre 2026, je suis référent technique de la plateforme : je porte la fondation partagée et revois ce que deux développeurs y livrent, et j’anime les ateliers avec le métier. Un architecte data et un product owner cadrent la direction du projet.',
           },
         ],
         stack: [
@@ -252,7 +252,7 @@ const fr = {
         role: 'Platform Engineer / DataOps',
         sector: 'Santé · Suisse',
         period: '06.2026 – aujourd’hui',
-        outcome:
+        outcome :
           'J’ai déployé la plateforme data du groupe pour un client du secteur de la santé, et livré son premier pipeline en production. La plateforme ne savait faire ni le multi-région ni le cross-tenant : j’ai développé les deux.',
         sections: [
           {
@@ -292,7 +292,7 @@ const fr = {
         role: 'Data Engineer',
         sector: 'Assurance sociale suisse, 1er pilier',
         period: '12.2023 – aujourd’hui',
-        outcome:
+        outcome :
           'Des caisses de compensation quittent un système historique sur DB2 pour SQL Server. J’ai développé une partie de la chaîne de migration en SSIS et procédures stockées, puis contribué à sa reconstruction complète en dbt.',
         sections: [
           {
@@ -330,7 +330,7 @@ const fr = {
         role: 'Data Engineer / DevOps',
         sector: 'Santé · Suisse',
         period: '10.2023 – 01.2024',
-        outcome:
+        outcome :
           'J’ai migré une plateforme data santé depuis Kubernetes vers des conteneurs serverless Azure, ce qui a divisé la facture d’infrastructure par environ dix.',
         sections: [
           {
@@ -351,7 +351,7 @@ const fr = {
         role: 'Administrateur de bases de données',
         sector: 'Services informatiques · plusieurs clients',
         period: '03.2023 – aujourd’hui',
-        outcome:
+        outcome :
           'J’exploite des bases Oracle de la 11g à la 23c sur les environnements clients, et j’ai automatisé la supervision des tablespaces, qui se faisait jusque-là à la main.',
         sections: [
           {
@@ -372,7 +372,7 @@ const fr = {
         role: 'Développement et maintenance',
         sector: 'Projet personnel',
         period: '2024 – aujourd’hui',
-        outcome:
+        outcome :
           'Je le développe et le maintiens : un site bilingue, sans JavaScript tiers, avec une Content Security Policy stricte et un déploiement continu sur Netlify.',
         sections: [
           {
@@ -391,4 +391,4 @@ const fr = {
   },
 };
 
-export default fr;
+export default fr ;

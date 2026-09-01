@@ -73,7 +73,7 @@ const en = {
     period: '03.2023 – present',
     body: 'Swiss IT consulting firm. I work on data platform and database projects for customers in pharmaceuticals, social insurance and healthcare.',
     highlight:
-      'I run several engagements in parallel. As technical lead on the pharmaceutical platform since September 2026, I review the code of the shared foundation, on which two developers each deliver their own domain, and I run the workshops with the business. The DB2 to SQL Server migration for social insurance runs over the same period, and I maintain the Oracle databases on customer environments.',
+      'I run several engagements in parallel. As technical lead on the pharmaceutical platform since September 2026, I review the code of the shared foundation, on which two developers deliver, and I run the workshops with the business. The DB2 to SQL Server migration for social insurance runs over the same period, and I maintain the Oracle databases on customer environments.',
   },
 
   skills: {
@@ -223,14 +223,14 @@ const en = {
               'A full Azure landing zone in Terraform - 10 reusable modules, Hub & Spoke topology, every resource behind a private endpoint with public access denied, NAT gateway, private DNS zones and centralised Log Analytics.',
               'Ingestion with Azure Data Factory: a self-hosted integration runtime on the on-premises SQL Server driven by Change Tracking, and parameterised pipelines writing full and delta loads to ADLS Gen2 as parquet.',
               'A medallion lakehouse on Databricks and Unity Catalog: bronze through Auto Loader and Delta Live Tables, silver through Delta MERGE with SCD1/SCD2. Change detection by hash, driven by a watermark table. In gold, conformed dimensions shared by every domain and per-domain fact tables.',
-              'Two business domains in production: finance, including the nine-step cost-rate resolution cascade behind the monthly gross margin, and marketing campaign targeting.',
+              'Five business domains in the plan: marketing, finance, commercial steering, purchasing and predictive. Two are partly in production, finance among them, with a nine-step cost-rate resolution cascade behind the monthly gross margin.',
               'CI/CD on Azure DevOps with self-hosted VMSS agents inside the network and OIDC federation instead of stored secrets - separate pipelines for Terraform, Data Factory artifacts and Databricks Asset Bundles.',
               'Then the maintainability work: the logic moved out of the notebooks into a tested Python package, quality gates in CI, and a second reviewer required on the shared core.',
             ],
           },
           {
             title: 'Leading the work',
-            body: 'Since September 2026 I am the technical lead on the platform: two developers each own a domain, I own the shared foundation and review what lands in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
+            body: 'Since September 2026 I am the technical lead on the platform: I own the shared foundation and review what two developers land in it, and I run the workshops with the business. A data architect and a product owner set the direction.',
           },
         ],
         stack: [
