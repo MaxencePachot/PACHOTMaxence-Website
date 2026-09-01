@@ -298,7 +298,7 @@ const en = {
         sections: [
           {
             title: 'Context',
-            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The project team, myself included, first built one migration chain per fund, with SSIS packages, stored procedures and post-deployment scripts.',
+            body: 'Swiss first-pillar compensation funds, public and professional, are migrating their data from a legacy DB2 system to SQL Server. The data team, myself included, first built one migration chain per fund, with SSIS packages, stored procedures and post-deployment scripts.',
           },
           {
             title: 'What I did',

@@ -297,7 +297,7 @@ const fr = {
         sections: [
           {
             title: 'Contexte',
-            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe projet, moi compris, a d’abord bâti une chaîne de migration par caisse, en packages SSIS, procédures stockées et scripts de post-déploiement.',
+            body: 'Des caisses de compensation suisses du 1er pilier, publiques et professionnelles, migrent leurs données d’un système historique sur DB2 vers SQL Server. L’équipe data, moi compris, a d’abord bâti une chaîne de migration par caisse, en packages SSIS, procédures stockées et scripts de post-déploiement.',
           },
           {
             title: 'Ce que j’ai fait',
